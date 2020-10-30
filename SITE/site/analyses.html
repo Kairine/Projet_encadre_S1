@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <title>Analyses</title>
+     <meta charset="utf-8">
+     <link rel="icon" href="images/favicon.ico">
+     <link rel="shortcut icon" href="images/favicon.ico" />
+     <link rel="stylesheet" href="css/style.css">
+     <script src="js/jquery.js"></script>
+     <script src="js/jquery-migrate-1.1.1.js"></script>
+     <script src="js/superfish.js"></script>
+     <script src="js/jquery.equalheights.js"></script>
+     <script src="js/jquery.easing.1.3.js"></script>
+          <script src="js/jquery.opacityrollover.js"></script>
+
+<script src="js/jquery.galleriffic.js"></script>
+<script>
+$(window).load(function(){
+        if ($("#thumbs").length) {
+          $('div.content').css('display', 'block');
+          // Initially set opacity on thumbs and add
+          // additional styling for hover effect on thumbs
+          var onMouseOutOpacity = 1.0;
+          $('#thumbs ul.thumbs li').opacityrollover({
+            mouseOutOpacity:   onMouseOutOpacity,
+            mouseOverOpacity:  0.8,
+            fadeSpeed:         'fast',
+            exemptionSelector: '.selected'
+          });
+      
+        // Initialize Advanced Galleriffic Gallery
+        var gallery = $('#thumbs').galleriffic({
+          delay:                     2500,
+          numThumbs:                 12,
+          enableTopPager:            false,
+          enableBottomPager:         true,
+          maxPagesToShow:            1,
+          imageContainerSel:         '#slideshow',
+          controlsContainerSel:      '#controls',
+          captionContainerSel:       '#caption',
+          loadingContainerSel:       '#loading',
+          renderSSControls:          false,
+          renderNavControls:         false,
+          playLinkText:              'Play Slideshow',
+          pauseLinkText:             'Pause Slideshow',
+          prevLinkText:              '&lsaquo; Previous Photo',
+          nextLinkText:              'Next Photo &rsaquo;',
+          nextPageLinkText:          '',
+          prevPageLinkText:          '',
+          enableHistory:             false,
+          autoStart:                 false,
+          syncTransitions:           true,
+          defaultTransitionDuration: 0,
+          onSlideChange:             function(prevIndex, nextIndex) {
+          // 'this' refers to the gallery, which is an extension of $('#thumbs')
+          this.find('ul.thumbs').children()
+            .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+            .eq(nextIndex).fadeTo('fast', 0.8);
+          },
+          onPageTransitionOut:       function(callback) {
+            this.fadeTo('fast', 1.0, callback);
+          },
+          onPageTransitionIn:        function() {
+            this.fadeTo('fast', 1.0);
+          }
+        });
+        }
+      });
+    </script>
+     <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+         </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <link rel="stylesheet" media="screen" href="css/ie.css">
+
+    <![endif]-->
+     </head>
+     <body  class="page1">
+<!--==============================header=================================-->
+ <header> 
+  <div class="container_12">
+    <div class="grid_12"> 
+    <h1><a href="index.html"><img src="images/logoo.png" alt="Sara  &amp;  Robert Personal Wedding Page"></a> </h1>
+         <div class="menu_block">
+           <nav  class="" >
+            <ul class="sf-menu">
+                   <li><a href="index.html">Page d'Accueil</a></li>
+                   <li><a href="projet.html">Projet</a></li>
+                   <li class="current"><a href="analyses.html">Analyses</a></li>
+                   <li><a href="archives.html">Archives</a></li>
+                   <li><a href="contact-us.html">About us & Contacts</a></li>
+                 </ul>
+              </nav>
+           <div class="clear"></div>
+           </div>
+           <div class="clear"></div>
+      </div>
+    </div>
+</header>
+
+<!--=======content================================-->
+
+<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - June 24, 2013!</div>
+  <div class="container_12">
+    <div class="grid_12">
+      <h2>Analyses</h2>
+		<div class="grid_12 alpha omega">
+		  <div id="thumbs" class="navigation" style="">
+			<ul class="thumbs noscript">
+			  <li  class="last"> <a class="thumb img_inner" href="images/america.png"> <img src="images/america.png" alt="" /></a>
+				<div class="caption">
+				  <p class="col1 text1">01. Anglais</p><br><br>
+				  <div class="wrapper">
+				  <p2>Il y a beaucoup d’expressions en anglais pour aborder le sujet de mariage gay. Dans la première version de cooccurrence, à notre surprise, il y a beaucoup de « same » et « sex », et un collègue nous a indiqué que c’est parce que « same-sex marriage » est synonyme de « marriage gay ». Donc, nous les avons toutes remplacées par « toto », qui normalement n’apparaît pas dans notre corpus pour bien observer les coccurrences.<br><br>
+				  Dans le graphe généré par iTrameur, on remarque la présence très importante du cadre juridique avec des mots relatifs à la loi et son application avec « legal » et ses variantes, comme « legalized », « legalizing » et « légalization ». Ce phénomène a formé un contraste très évident avec le corpus chinois qui n’a pas autant de cooccurrences relatives à la légalisation. L’enjeu de discussion en Chine se repose sur si mariage homosexuel est possible dans ce pays dans 10 ans, alors que beaucoup de « states » en Amérique et l’Angleterre ont déjà terminé le processus de légalisation durant ces dernières années. La notion de légalisation est souvent évoquée dans le corpus français, qui montre une similarité entre le monde anglophone et francophone de ce point de vue.<br><br>
+				  Cependant, la majorité de nos URL sont des reportages sur le sujet au lieu des documents juridiques. Donc, on peut constater que le processus de légalisation de mariage gay dans les différentes régions des Etats-Unis ainsi que les territoires du Royaume-Uni a été largement commentée par les médias.<br><br>
+				  Le mot « religious » montre un côté religieux qui fait obstacle à mariage gay. Les chinois, en revanche, ne sont pas tellement influencés par cet aspect-là. Une preuve c'est que, même si l'on parle de tradition, le mot « religion » n’est jamais apparu dans le corpus chinois.<br><br>
+				  Pour améliorer notre résultat, il faudrait nous attaquer aussi au bruit de site web, puisque dans notre réseau, il y a des suites fréquentes comme « copyright » et « privacy policy » qui nous empêchent de trouver d’autres mots qui ont plus de valeur relative à notre sujet choisi.</p2><br><br>
+				  <p1>En savoir plus: <a target="_blank" href="https://mariagepourtousdot.wordpress.com/2019/01/13/itrameur-anglais/">https://mariagepourtousdot.wordpress.com/2019/01/13/itrameur-anglais/</a></p1>
+				  </div>
+				</div>
+			  </li>
+			  <li class="last"><a class="thumb img_inner" href="images/chine.png"> <img src="images/chine.png" alt="" /></a>
+				<div class="caption">
+				  <p class="col1 text1">02. Chinois</p>
+				  <div class="wrapper">
+				  <p1>1. Traitement de la forme des mots</p1>
+				  <p2>En général, les motifs en chinois ne sont pas aussi variés que ceux en anglais et français. Il n’y a pas d’autres expressions que « 同性恋婚姻 » et son abréviation comme « 同性婚姻 » et « 同婚 ».<br><br>
+				  Le mot « gay mariage » se traduit en chinois comme « 同性恋婚姻 ». Cependant dans certains contextes, nous utilisons seulement « 同婚 », les deux caractères pour simplifier l’expression. Selon le résultat renvoyé par iTrameur, « 同性恋婚姻 » est lié plutôt à des théories et des reportages, alors que dans le contexte de forum et de blog, ils ont davantage tendance à utiliser « 同婚 ».<br><br>
+				  Pour traiter le corpus du chinois avec iTrameur et créer le nuage de mots, il faut surmonter particulièrement deux difficultés. <br><br>
+				  Dans un premier temps, la segmentation des mots. Un mot en chinois se compose souvent d’au moins deux caractères, donc avec un seul caractère sans contexte, nous ne sauraons jamais sa valeur sémantique et de quoi il s’agit. C’est la raison pour laquelle nous sommes obligées de faire la segmentation. Nous avons utilisé le Stanford Chinese Segmenter qui segmente par un groupe sémantique des caractères en chinois qui peut régler la plupart des problèmes. (<a target="_blank" href="https://mariagepourtousdot.wordpress.com/2019/01/16/finalisation-du-script/">Plus de détails sur notre blog ---></a>)<br><br>
+				  La deuxième difficulté s'agit du nettoyage du corpus. La plupart des mots qui apparaissent le plus avec le mot « 同性恋婚姻 », sont des « mots vides » comme « 是 » (être), « 不 » (ne ... pas) et « 的 » (de). Ces mots qui n’ont pas de sens lexical et sont tellement communs qu'il est inutile de l'indexer ou de l'utiliser dans une recherche. <br><br>
+				  Mais nous ne pouvons pas les supprimer directement comme en français et anglais à cause de polysémie de ces mots. Par exemple, si on supprime le mot « 在 » (à), nous allons perdre aussi le sens de « 现在 » (maintenant),  « 在意 » (prendre au sérieux) etc. <br><br>
+				  <p1>2. Analyse du contenu</p1><br><br>
+				  <p2>Nous avons déjà remarqué que dans les cooccurrences, il y a des expressions qui sont vivement contre le mariage homosexuel, comme « contre » (ou en anglais « against »), « terror », « ne marchera pas » et « punir ». Il est évident que les Chinois portent de différentes opinions sur ce sujet que les Européens, et jusqu'à présent, la société chinoise n'est pas prête pour autoriser le mariage de même sexe.<br><br>
+				  En Chine, le taux de soutien de mariage gay est encore relativement faible : selon les sondages de 2014, seulement 21% des Chinois sont favorables à mariage homosexuel, 5% de plus que les années précédentes. N’ayant pas le soutien du peuple, le gouvernement manque de motivation pour promouvoir la légalisation de mariage gay. <br><br>
+				  De plus, les votes ne peuvent être le moteur de la législation de mariage homosexuel en Chine. Dans les pays occidentaux, de nombreux politiciens veulent obtenir des votes des homosexuels, comme 17% des donateurs d'Obama sont des homosexuels. On conçoit à quel point ce groupe est important aux Etat-Unis. Les politiciens tiennent à exprimer leurs opinions pour gagner l’élection mais en Chine, les politiciens n'ont pas besoin de prendre en compte la question des votes.<br><br>
+				  Non seulement le peuple et les politiciens ne sont pas prêts, même le groupe homosexuel n'est pas prêt. À l'heure actuelle, moins de 2% des homosexuels chinois s'adressent à leurs parents. La plupart des homosexuels en Chine se cachent toujours dans le « cabinet », et ils ne prévoient pas de « come out of the closet ».<br><br>
+				  Loin d’être légalisé, le mariage gay est presque un tabou en Chine, un pays qui est très connu d’être traditionnel et conservateur. C’est pourquoi on voit dans iTrameur la phrase « En raison de violation de loi, ce commentaire est supprimé ».<br><br>
+				  En un mot, la situation de mariage gay en Chine est extrêmement différente que celle dans les pays occidentaux pour des raisons politiques, sociologiques et culturelles. Cette différence est également montrée par le résultat sur iTrameur.</p2><br><br>
+				  <p1>En savoir plus: <a target="_blank" href="https://mariagepourtousdot.wordpress.com/2019/01/19/itrameur-chinois/">https://mariagepourtousdot.wordpress.com/2019/01/19/itrameur-chinois/</a></p1>
+				  </div>
+				</div>
+			  </li>
+			  <li  class="last"><a class="thumb img_inner" href="images/france.png"> <img src="images/france.png" alt="" /></a>
+				<div class="caption">
+				  <p class="col1 text1">03. Français</p>
+				  <div class="wrapper">
+				  <p2>Il y a d’abord eu une phase de « nettoyage », les mots grammaticaux du français avaient tendance à donner des résultats non pertinents pour une analyse.<br><br>
+				  Le nuage de mots nous donnait déjà une première idée sur les contextes d’emploi de « mariage homosexuel ». On remarquait ainsi qu’il y avait des termes négatifs et un rapport avec la religion et la famille. De 2012 à 2016, ce mariage faisait donc débat dans la société française, il y avait des inquiétudes et des tensions. On peut dire que les Français étaient moins neutres sur le sujet, à la différence des Anglophones.<br><br>
+				  Avec le travail d’iTrameur, nous avons pu obtenir des données plus concrètes avec les cooccurences des termes.<br><br>
+				  On a pu noter que les Français utilisaient beaucoup d’expressions pour signifier la même chose : mariage gay, mariage pour tous, mariage entre personnes de même sexe… Ceci entrainait la forte présence des termes « homosexuel », « gay », « tous » et « pour » autour du mot « mariage ».<br><br>
+				  En outre, la législation était souvent évoquée, de ce point de vue les Français se rapprochaient de leurs homologues anglais. L’évocation de la famille cependant rapprochait les Français de leurs homologues chinois, même si c’était plutôt dans l’optique d’avoir des familles avec deux parents du même sexe. Ce dernier point fait d’ailleurs grandement débat aujourd’hui et pas seulement en France.<br><br>
+				  On remarquait également un grand nombre de formulations négatives « ne/n' ... pas » par rapport aux autres cooccurences de termes. Il serait simpliste de dire que ces expressions négatives sont le reflet des pensées des Français vis-à-vis du mariage homosexuel, on peut les employer aussi bien en défaveur qu’en faveur de ce mariage.<br><br>
+				  Pour résumer, les Français ont eu diverses opinions sur le mariage homosexuel qui a fait débat et ses détracteurs ont su se faire entendre, cependant ils ne représentaient pas la majorité car cette loi a pu être mise en application (à 100 voix d’écart certes) sans Révolution sanglante. A l’heure actuelle, l’opposition au mariage homosexuel en France est faible, les combats se tournent plutôt vers la GPA et PMA.</p2><br><br>
+				  <p1>En savoir plus: <a target="_blank" href="https://mariagepourtousdot.wordpress.com/2019/01/12/travail-sur-itrameur/">https://mariagepourtousdot.wordpress.com/2019/01/12/travail-sur-itrameur/</a></p1>
+				  </div>
+				</div>
+			  </li>
+			   
+			</ul>
+		   
+		  </div>
+		</div>
+		<div class="grid_12 omega alpha">
+		  <div id="gallery" class="content advanced_gallery">
+			<div class="slideshow-container">
+			  <div id="loading" class="loader"></div>
+			  <div id="slideshow" class="slideshow simple"></div>
+			</div>
+			<div id="caption" class="caption-container"></div>
+		  </div>
+		</div>
+    </div>
+  </div>
+</div>
+<!--==============================footer=================================-->
+
+<footer>    
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="socials">
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+      </div>
+     <p><a href="index.html" class="footer_logo"><img src="images/footer_logo.png"  alt=""></a>  &copy; 2013 | <a href="#">Privacy Policy</a> | Website  designed by <a href="http://www.templatemonster.com" rel="nofollow">TemplateMonster.com</a></p>
+     
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
+</body>
+</html>

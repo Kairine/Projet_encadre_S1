@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:og="http://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700" rel="stylesheet">
+
+  <script src="/sites/all/themes/slatefr/scripts/vendors/js.cookie.min.js"></script>
+  <script type="text/javascript" async=true>
+var elem = document.createElement('script');
+elem.src = 'https://quantcast.mgr.consensu.org/cmp.js';
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+(function() {
+var gdprAppliesGlobally = false;
+function addFrame() {
+  if (!window.frames['__cmpLocator']) {
+    if (document.body) {
+      var body = document.body,
+          iframe = document.createElement('iframe');
+      iframe.style = 'display:none';
+      iframe.name = '__cmpLocator';
+      body.appendChild(iframe);
+    } else {
+      // In the case where this stub is located in the head,
+      // this allows us to inject the iframe more quickly than
+      // relying on DOMContentLoaded or other events.
+      setTimeout(addFrame, 5);
+    }
+  }
+}
+addFrame();
+function cmpMsgHandler(event) {
+  var msgIsString = typeof event.data === "string";
+  var json;
+  if(msgIsString) {
+    json = event.data.indexOf("__cmpCall") != -1 ? JSON.parse(event.data) : {};
+  } else {
+    json = event.data;
+  }
+  if (json.__cmpCall) {
+    var i = json.__cmpCall;
+    window.__cmp(i.command, i.parameter, function(retValue, success) {
+      var returnMsg = {"__cmpReturn": {
+      "returnValue": retValue,
+      "success": success,
+      "callId": i.callId
+      }};
+      event.source.postMessage(msgIsString ?
+      JSON.stringify(returnMsg) : returnMsg, '*');
+    });
+  }
+}
+window.__cmp = function (c) {
+  var b = arguments;
+  if (!b.length) {
+    return __cmp.a;
+  }
+  else if (b[0] === 'ping') {
+    b[2]({"gdprAppliesGlobally": gdprAppliesGlobally, "cmpLoaded": false}, true);
+  } else if (c == '__cmp')
+  return false;
+  else {
+    if (typeof __cmp.a === 'undefined') {
+      __cmp.a = [];
+    }
+    __cmp.a.push([].slice.apply(b));
+  }
+}
+window.__cmp.gdprAppliesGlobally = gdprAppliesGlobally;
+window.__cmp.msgHandler = cmpMsgHandler;
+if (window.addEventListener) {
+  window.addEventListener('message', cmpMsgHandler, false);
+}
+else {
+  window.attachEvent('onmessage', cmpMsgHandler);
+}
+})();
+window.__cmp('init', {
+  'Language': 'FR',
+  'Initial Screen Title Text': 'Le respect de votre vie privée est notre priorité',
+  'Initial Screen Reject Button Text': 'Je refuse',
+  'Initial Screen Accept Button Text': 'J&#039;accepte',
+  'Initial Screen Purpose Link Text': 'Afficher toutes les utilisations prévues',
+  'Purpose Screen Title Text': 'Le respect de votre vie privée est notre priorité',
+  'Purpose Screen Header Title Text': 'Paramètres de gestion de la confidentialité',
+  'Purpose Screen Body Text': 'Vous pouvez configurer vos réglages et choisir comment vous souhaitez que vos données personnelles soient utilisée en fonction des objectifs ci-dessous. Vous pouvez configurer les réglages de manière indépendante pour chaque partenaire. Vous trouverez une description de chacun des objectifs sur la façon dont nos partenaires et nous-mêmes utilisons vos données personnelles.',
+  'Purpose Screen Enable All Button Text': 'Consentement à toutes les utilisations prévues',
+  'Purpose Screen Vendor Link Text': 'Afficher la liste complète des partenaires',
+  'Purpose Screen Cancel Button Text': 'Annuler',
+  'Purpose Screen Save and Exit Button Text': 'Enregistrer et quitter',
+  'Vendor Screen Title Text': 'Le respect de votre vie privée est notre priorité',
+  'Vendor Screen Body Text': 'Vous pouvez configurer vos réglages indépendamment pour chaque partenaire listé ci-dessous. Afin de faciliter votre décision, vous pouvez développer la liste de chaque entreprise pour voir à quelles fins il utilise les données. Dans certains cas, les entreprises peuvent révéler qu&#039;elles utilisent vos données sans votre consentement, en fonction de leurs intérêts légitimes. Vous pouvez cliquer sur leurs politiques de confidentialité pour obtenir plus d&#039;informations et pour vous désinscrire.',
+  'Vendor Screen Accept All Button Text': 'Tout accepter',
+  'Vendor Screen Reject All Button Text': 'Tout refuser',
+  'Vendor Screen Purposes Link Text': 'Revenir aux objectifs',
+  'Vendor Screen Cancel Button Text': 'Annuler',
+  'Vendor Screen Save and Exit Button Text': 'Enregistrer et quitter',
+  'Initial Screen Body Text': 'Nos partenaires et nous-mêmes utilisons différentes technologies, telles que les cookies, pour personnaliser les contenus et les publicités, proposer des fonctionnalités sur les réseaux sociaux et analyser le trafic. Merci de cliquer sur le bouton ci-dessous pour donner votre accord. Vous pouvez changer d’avis et modifier vos choix à tout moment.',
+  'Initial Screen Body Text Option': 1,
+  'Publisher Name': 'Slate.fr',
+  'Publisher Logo': '/sites/all/themes/slatefr/static/svg/slate-fr-purple.svg',
+  'Min Days Between UI Displays': 24,
+  'Publisher Purpose IDs': [1,2,3,4,5],
+  'Consent Scope': 'service',
+  'UI Layout': 'banner',
+  'No Option': false,
+  'Default Value for Toggles': 'off',
+  'Display Persistent Consent Link': false
+});
+var userAcceptCookies = false;
+var cmpConsents;
+if(Cookies.get('cmp_consents')) {
+  var cmpConsents = JSON.parse(Cookies.get('cmp_consents'));
+  if(cmpConsents[1] && cmpConsents[3]) window.userAcceptCookies = true;
+} else {
+  window.__cmp('setConsentUiCallback', checkConsents);
+}
+function checkConsents() {
+  window.__cmp('getCurrentPublisherConsents', [1,2,3,4,5], function(consents) {
+    var consentsLength = Object.keys(consents.standardPurposeConsents).length;
+    if(consentsLength) {
+      if(consents.standardPurposeConsents[1] && consents.standardPurposeConsents[3]) {
+        window.userAcceptCookies = true;
+        Cookies.set('cmp_consents', consents.standardPurposeConsents, {expires: 365});
+      }
+    }
+  });
+}
+</script>
+<style type="text/css">
+.qc-cmp-ui{background-color:#fff!important}.qc-cmp-ui .qc-cmp-main-messaging,.qc-cmp-ui .qc-cmp-messaging,.qc-cmp-ui .qc-cmp-privacy-settings-title,.qc-cmp-ui .qc-cmp-purpose-list,.qc-cmp-ui .qc-cmp-sub-title,.qc-cmp-ui .qc-cmp-tab,.qc-cmp-ui .qc-cmp-table-header,.qc-cmp-ui .qc-cmp-title,.qc-cmp-ui .qc-cmp-vendor-list,.qc-cmp-ui .qc-cmp-vendor-list-title{color:#000!important}.qc-cmp-ui .qc-cmp-button,.qc-cmp-ui .qc-cmp-button.qc-cmp-secondary-button,.qc-cmp-ui .qc-cmp-button.qc-cmp-secondary-button:hover,.qc-cmp-ui .qc-cmp-button:hover{background-color:#670133!important;border-color:transparent!important;color:#fff!important}.qc-cmp-ui .qc-cmp-table,.qc-cmp-ui .qc-cmp-table tr{border:1px solid #d3d4d6!important}.qc-cmp-ui .qc-cmp-alt-action,.qc-cmp-ui .qc-cmp-alt-action:hover,.qc-cmp-ui .qc-cmp-link,.qc-cmp-ui .qc-cmp-link:hover,.qc-cmp-ui .qc-cmp-table-row,.qc-cmp-ui .qc-cmp-toggle-status{color:#000!important}.qc-cmp-ui .qc-cmp-table{border-collapse:collapse}.qc-cmp-ui .qc-cmp-table-row,.qc-cmp-ui .qc-cmp-table-row:first-child,.qc-cmp-ui .qc-cmp-table-row:last-child{border-top:1px solid #d3d4d6!important;border-bottom:1px solid #d3d4d6!important;border-color:#d3d4d6!important}.qc-cmp-ui .qc-cmp-scrolling-section table:first-child{border-top:1px solid #d3d4d6!important}.qc-cmp-ui .qc-cmp-vendor-row{border-bottom:1px solid #d3d4d6!important}.qc-cmp-ui .qc-cmp-bordered{border:1px solid #e8e9ea!important}.qc-cmp-ui .qc-cmp-vendor-list-container{border:1px solid #e8e9ea!important;border-bottom:none}.qc-cmp-ui .qc-cmp-toggle{height:18px!important;width:36px!important}.qc-cmp-ui .qc-cmp-toggle-on{background-color:#c50063!important}.qc-cmp-ui .qc-cmp-toggle-off{background-color:#bbb!important}
+</style>
+    <link rel="shortcut icon" href="https://www.slate.fr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://www.slate.fr/apple-touch-icon.png" />
+  <link rel="alternate" type="application/rss+xml" title="Slate.fr" href="/rss.xml" />
+
+  <link rel="stylesheet" href="/sites/all/themes/slatefr/styles/main.css?v=44">
+
+  <link rel="amphtml" href="https://www.slate.fr/story/161356/les-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes?amp">
+  <script src="//cdn.hubvisor.io/wrapper/01BYK28ENND8X5G8K0AJ2DPK3C/hubvisor.js"></script>
+      <link rel="canonical" href="http://www.slate.fr/story/161356/les-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" />
+  <meta name="robots" content="index,follow" />
+  <title>Les musulmans sont plus nombreux à soutenir le mariage homosexuel que les évangélistes blancs | Slate.fr</title>
+  <meta name="description" content="La communauté musulmane américaine s'ouvre à la question des droits LGBT+. Alors que la présidence Trump va de pair avec une stigmatisation croissante de la communauté musulmane vivant aux États-Unis, un récent sondage vient tordre le cou à plusieurs idées reçues la concernant...." />
+    
+  <meta property="og:title" content="Les musulmans sont plus nombreux à soutenir le mariage homosexuel que les évangélistes blancs" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="http://www.slate.fr/story/161356/les-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" />
+  <meta property="og:image" content="http://www.slate.fr/sites/default/files/styles/1200x680/public/gm.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="680" />
+  <meta property="og:description" content="La communauté musulmane américaine s'ouvre à la question des droits LGBT+. Alors que la présidence Trump va de pair avec une stigmatisation croissante de la communauté musulmane vivant aux États-Unis, un récent sondage vient tordre le cou à plusieurs idées reçues la concernant...." />
+  <meta property="og:site_name" content="Slate.fr" />
+  <meta property="fb:admins" content="587894481" />
+    <meta property="fb:app_id" content="331756046878771" />
+  <meta property="fb:page_id" content="77978221232" />
+        <meta property="og:type" content="article" />
+  <meta property="article:section" content="Égalités" />
+  <meta property="article:tag" content="LGBT-mariage-Etats-Unis" />
+  <meta property="article:published_time" content="2018-05-05T15:51:00+02:00" />
+  <meta property="article:modified_time" content="2018-05-06T12:08:47+02:00" />
+  
+  <meta property="twitter:account_id" content="20224969" />
+  <meta name="twitter:site" content="@Slatefr" />
+  <meta name="twitter:domain" content="Slate.fr" />
+  <meta name="twitter:title" content="Les musulmans sont plus nombreux à soutenir le mariage homosexuel que les évangélistes blancs" />
+  <meta name="twitter:description" content="La communauté musulmane américaine s'ouvre à la question des droits LGBT+. Alors que la présidence Trump va de pair avec une stigmatisation croissante de la communauté musulmane vivant aux États-Unis, un récent sondage vient tordre le cou à plusieurs idées reçues la concernant...." />
+  <meta name="twitter:image:src" content="http://www.slate.fr/sites/default/files/styles/1200x680/public/gm.png" />
+  <meta name="twitter:url" content="http://www.slate.fr/story/161356/les-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Slate.fr",
+    "url": "http://www.slate.fr",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "http://www.slate.fr/search?mot-cle={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Slate.fr",
+    "url": "http://www.slate.fr",
+    "logo": "http://www.slate.fr/sites/all/themes/slatefr/static/images/logo-square.png",
+    "sameAs": [
+      "https://www.facebook.com/SlateFrance/",
+      "https://twitter.com/slatefr",
+      "https://fr.linkedin.com/company/slate-fr",
+      "https://www.youtube.com/c/slatefr",
+      "https://www.instagram.com/slatefrance/"
+    ]
+  }
+  </script>
+    <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http://www.slate.fr",
+          "name": "Slate.fr"
+        }
+      },
+            {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "http://www.slate.fr/egalites/",
+          "name": "Égalités"
+        }
+      }
+          ]
+  }
+  </script>
+      <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage":"http://www.slate.fr/story/161356/les-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes",
+    "headline": "Les musulmans sont plus nombreux à soutenir le mariage homosexuel que les évangélistes blancs",
+    "alternativeHeadline": "La communauté musulmane américaine s'ouvre à la question des droits LGBT+. Alors que la présidence Trump va de pair avec une stigmatisation croissante de la communauté musulmane vivant aux États-Unis, un récent sondage vient tordre le cou à plusieurs idées reçues la concernant....",
+    "description": "La communauté musulmane américaine s'ouvre à la question des droits LGBT+. Alors que la présidence Trump va de pair avec une stigmatisation croissante de la communauté musulmane vivant aux États-Unis, un récent sondage vient tordre le cou à plusieurs idées reçues la concernant....",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://www.slate.fr/sites/default/files/styles/1200x680/public/gm.png",
+      "height": 680,
+      "width": 1200    },
+    "datePublished": "2018-05-05T15:51:00+02:00",
+    "dateModified": "2018-05-06T12:08:47+02:00",
+    "keywords":["LGBT","mariage","Etats-Unis"],
+    "articleSection":"Égalités",
+    "author": {
+      "@type": "Person",
+      "name": "Slate.fr"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Slate.fr",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://www.slate.fr/sites/all/themes/slate_amp/images/logo_amp.png",
+        "width": 600,
+        "height": 60
+      }
+    }
+  }
+  </script>
+          
+      <script async="async" src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+  <script type="application/javascript">
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  if(userAcceptCookies) {
+    googletag.cmd.push(function() {
+      var mapbanniere = googletag.sizeMapping().
+        addSize([980, 0], [[970, 90], [970, 250], [728, 90], [320, 100], [320, 50], [1, 1]]).
+        addSize([768, 0], [[728, 90], [320, 100], [320, 50], [1, 1]]).
+        addSize([320, 0], [[320, 100], [320, 50], [1, 1]]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mapbanniere2 = googletag.sizeMapping().
+        addSize([980, 0], [[970, 90], [970, 250], [728, 90], [320, 100], [320, 50], [1, 1]]).
+        addSize([768, 0], [[728, 90], [320, 100], [320, 50], [1, 1]]).
+        addSize([320, 0], [[320, 100], [320, 50], [1, 1]]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mappavearticles2 = googletag.sizeMapping().
+        addSize([980, 0], [[320, 100], [320, 50], [300, 250], [1, 1]]).
+        addSize([768, 0], [[320, 100], [320, 50], [300, 250], [1, 1]]).
+        addSize([320, 0], [[320, 100], [320, 50], [300, 250], [1, 1]]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mappavearticles3 = googletag.sizeMapping().
+        addSize([980, 0], [1, 1]).
+        addSize([768, 0], [1, 1]).
+        addSize([320, 0], [1, 1]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mappavehaut = googletag.sizeMapping().
+        addSize([980, 0], [[300, 600], [300, 250]]).
+        addSize([768, 0], [[300, 600], [300, 250]]).
+        addSize([320, 0], [300, 250]).
+        addSize([0, 0], []).
+        build();
+      var mappavemtf = googletag.sizeMapping().
+        addSize([980, 0], [[300, 600], [300, 250]]).
+        addSize([768, 0], [[300, 600], [300, 250]]).
+        addSize([320, 0], [300, 250]).
+        addSize([0, 0], []).
+        build();
+      var mapinterstitiel = googletag.sizeMapping().
+        addSize([980, 0], [[1, 1], [320, 480]]).
+        addSize([768, 0], [[1, 1], [320, 480]]).
+        addSize([320, 0], [[1, 1], [320, 480]]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mapnativead = googletag.sizeMapping().
+        addSize([980, 0], [1, 1]).
+        addSize([768, 0], [1, 1]).
+        addSize([320, 0], [1, 1]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mapnativead2 = googletag.sizeMapping().
+        addSize([980, 0], [1, 1]).
+        addSize([768, 0], [1, 1]).
+        addSize([320, 0], [1, 1]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mapnativead3 = googletag.sizeMapping().
+        addSize([980, 0], [1, 1]).
+        addSize([768, 0], [1, 1]).
+        addSize([320, 0], [1, 1]).
+        addSize([0, 0], [1, 1]).
+        build();
+      var mapnativead4 = googletag.sizeMapping().
+        addSize([980, 0], [1, 1]).
+        addSize([768, 0], [1, 1]).
+        addSize([320, 0], [1, 1]).
+        addSize([0, 0], [1, 1]).
+        build();
+            googletag.defineSlot('\/21685585667\/egalite\/banniere', [[1,1], [970,90], [970,250], [728,90]], 'div-gpt-ad-1520327189224-9').defineSizeMapping(mapbanniere).addService(googletag.pubads());
+            googletag.defineSlot('\/21685585667\/egalite\/pavearticles2', [[320,50], [320,100], [1,1], [300,250]], 'div-gpt-ad-1528805285945-2').defineSizeMapping(mappavearticles2).addService(googletag.pubads());
+            googletag.defineSlot('\/21685585667\/egalite\/pavearticles3', [1,1], 'div-gpt-ad-1544801917846-0').defineSizeMapping(mappavearticles3).addService(googletag.pubads());
+            googletag.defineSlot('\/21685585667\/egalite\/pavehaut', [[300,600], [300,250]], 'div-gpt-ad-1520327189224-11').defineSizeMapping(mappavehaut).addService(googletag.pubads());
+            googletag.defineSlot('\/21685585667\/egalite\/pavemtf', [[300,600], [300,250]], 'div-gpt-ad-1520327189224-12').defineSizeMapping(mappavemtf).addService(googletag.pubads());
+            googletag.defineSlot('\/21685585667\/egalite\/interstitiel', [[1,1], [320,480]], 'div-gpt-ad-1520433120883-3').defineSizeMapping(mapinterstitiel).addService(googletag.pubads());
+            googletag.defineSlot('\/21685585667\/egalite\/nativead4', [1,1], 'div-gpt-ad-1529408592037-0').defineSizeMapping(mapnativead4).addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+      googletag.pubads().collapseEmptyDivs();
+      if(cmpConsents && !cmpConsents[2]) googletag.pubads().setRequestNonPersonalizedAds(1);
+            googletag.enableServices();
+    });
+  }
+  </script>  
+  
+    <script src="//a.mailmunch.co/app/v1/site.js" id="mailmunch-script" data-mailmunch-site-id="481164" async="async"></script>
+  
+  </head>
+<body class="story" name="story">
+  
+  <div class="app">
+  <div class="layout layout--article">
+        <div id="div-gpt-ad-1520327189224-9" class="ad banner"><script>if(userAcceptCookies) { googletag.cmd.push(function() { googletag.display("div-gpt-ad-1520327189224-9"); }); }</script></div><article>
+  <div class="article-header grid-container">
+    <div class="row">
+      <div class="article-header__inner col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="article-header__breadcrumb">
+                              <a href="/egalites/">Égalités</a>
+                    <span>/</span>          <a href="/societe/">Société</a>
+                  </div>
+                <h1 class="article-header__title">Les musulmans sont plus nombreux à soutenir le mariage homosexuel que les évangélistes blancs</h1>
+        <span class="article-header__reading-time">Temps de lecture : 2 min</span>        <p class="article-header__infos article-infos">
+                    Repéré par <a class="author" href="/source/152573/lea-marie">Léa Marie</a>
+                              — <time datetime="2018-05-05 15:51:00">5 mai 2018 à 15h51</time> — mis à jour le 6 mai 2018 à 12h08        </p>
+        <h2 class="article-header__chapo">La communauté musulmane américaine s'ouvre à la question des droits LGBT+.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="article-content-wrapper grid-container">
+    <div class="article-thumb-wrapper">
+      <div class="article-thumb">
+        <figure class="preload article-image">
+          <div class="image-container">
+                        <img class="image image--full lazyload" data-full-src="/sites/default/files/styles/1060x523/public/gm.png" alt="Manifestation LGBT+ à Hollywood, 15 mai 2008. Par GABRIEL BOUYS via AFP">
+                      </div>
+          <figcaption class="legend-container">
+            <div class="legend">
+              <span class="caption-picture">Manifestation LGBT+ &agrave; Hollywood, 15 mai 2008. Par GABRIEL BOUYS via AFP
+</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="sharing-tools-wrapper">
+        <div class="sharing-tools">
+          <a data-share="fb" data-url="https://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" class="sharing-btn sharing-btn--circle sharing-btn--fb" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--fb">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-fb.svg" alt="Partager sur Facebook" />
+            </div>
+                      </a>
+          <a href="fb-messenger://share/?link=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&app_id=328225707698687" class="sharing-btn sharing-btn--circle sharing-btn--messenger" target="_blank">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--messenger">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-messenger-white.svg" alt="Partager sur Facebook Messenger" />
+            </div>
+          </a>
+          <a href="https://www.facebook.com/dialog/send?app_id=328225707698687&link=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&redirect_uri=http://www.slate.fr/" class="sharing-btn sharing-btn--circle sharing-btn--messenger sharing-btn--messenger-desktop" target="_blank">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--messenger">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-messenger-white.svg" alt="Partager sur Facebook Messenger" />
+            </div>
+          </a>
+          <a data-share="tw" data-url="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&text=Les+musulmans+sont+plus+nombreux+%C3%A0+soutenir+le+mariage+homosexuel+que+les+%C3%A9vang%C3%A9listes+blancs&via=slatefr" class="sharing-btn sharing-btn--circle sharing-btn--twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&text=Les+musulmans+sont+plus+nombreux+%C3%A0+soutenir+le+mariage+homosexuel+que+les+%C3%A9vang%C3%A9listes+blancs&via=slatefr">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--twitter">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-twitter.svg" alt="Partager sur Twitter" />
+            </div>
+          </a>
+          <a data-share="li" data-url="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" class="sharing-btn sharing-btn--circle sharing-btn--linkedin" href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--linkedin">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-linkedin.svg" alt="Partager sur LinkedIn" />
+            </div>
+          </a>
+          <a class="sharing-btn sharing-btn--circle sharing-btn--whatsapp" href="whatsapp://send?text=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--whatsapp">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-whatsapp.svg" alt="Partager sur Whatsapp" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="article-content row">
+      <div class="content-left col-md-8 col-auto">
+        <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even">
+            <p class="article-infos article-infos--top-article">Temps de lecture: 2 min — Repéré sur <a href='https://www.indy100.com/article/us-muslims-same-sex-marriage-lgbt-rights-islam-8336526?utm_source=indy&utm_medium=top5&utm_campaign=i100' target='_blank'>Indy 100</a></p>
+            <p>Alors que la pr&eacute;sidence Trump va de pair avec une stigmatisation croissante de la communaut&eacute; musulmane vivant aux &Eacute;tats-Unis, un r&eacute;cent sondage vient tordre le cou &agrave; plusieurs id&eacute;es re&ccedil;ues la concernant.</p><p>Bas&eacute;e sur un grand &eacute;chantillon de plus de 40.000 Am&eacute;ricains, une &eacute;tude d&rsquo;opinion r&eacute;v&egrave;le en effet que la majorit&eacute; des musulmans se dit favorable au mariage entre personnes du m&ecirc;me sexe.<div id="inreadbis" class="ad-wrapper"><span id="wrapper_inread"><div id="div-gpt-ad-1544801917846-0" class="ad banner"><script>if(userAcceptCookies) { googletag.cmd.push(function() { googletag.display("div-gpt-ad-1544801917846-0"); }); }</script></div></span></div></p><p>L&eacute;galis&eacute; par la Cour Supr&ecirc;me am&eacute;ricaine en 2015, le mariage gay, mais aussi les droits LGBT+ en g&eacute;n&eacute;ral, seraient de plus en plus soutenus au sein des diverses communaut&eacute;s religieuses outre-Atlantique. </p><p>Seuls les &eacute;vang&eacute;listes blancs seraient encore majoritairement oppos&eacute;s &agrave; l&rsquo;union des couples homosexuels. Les Mormons se disent contre &agrave; 58% et les t&eacute;moins de Jehovah &agrave; 63%. A contrario, 51% des musulmans sond&eacute;s affirment &ecirc;tre pour. </p><p>Le sondage t&eacute;moigne globalement d&rsquo;une approbation croissante du mariage gay, accept&eacute; dans 44 &eacute;tats am&eacute;ricains sur 50. Plus conservateurs et traditionnellement R&eacute;publicains, la Louisiane, le Mississippi, le Tennessee, la Virginie-Occidentale et la Caroline du Nord restent encore &agrave; convaincre. </p>
+            </div>
+          </div>
+        </div>
+        <div class="sharing-tools sharing-tools--align-center">
+          <a data-share="fb" data-url="https://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" class="sharing-btn sharing-btn--circle sharing-btn--fb" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--fb">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-fb.svg" alt="Partager sur Facebook" />
+            </div>
+                      </a>
+          <a href="fb-messenger://share/?link=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&app_id=328225707698687" class="sharing-btn sharing-btn--circle sharing-btn--messenger" target="_blank">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--messenger">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-messenger-white.svg" alt="Partager sur Facebook Messenger" />
+            </div>
+          </a>
+          <a href="https://www.facebook.com/dialog/send?app_id=328225707698687&link=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&redirect_uri=http://www.slate.fr/" class="sharing-btn sharing-btn--circle sharing-btn--messenger sharing-btn--messenger-desktop" target="_blank">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--messenger">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-messenger-white.svg" alt="Partager sur Facebook Messenger" />
+            </div>
+          </a>
+          <a data-share="tw" data-url="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&text=Les+musulmans+sont+plus+nombreux+%C3%A0+soutenir+le+mariage+homosexuel+que+les+%C3%A9vang%C3%A9listes+blancs&via=slatefr" class="sharing-btn sharing-btn--circle sharing-btn--twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&text=Les+musulmans+sont+plus+nombreux+%C3%A0+soutenir+le+mariage+homosexuel+que+les+%C3%A9vang%C3%A9listes+blancs&via=slatefr">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--twitter">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-twitter.svg" alt="Partager sur Twitter" />
+            </div>
+          </a>
+          <a data-share="li" data-url="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" class="sharing-btn sharing-btn--circle sharing-btn--linkedin" href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--linkedin">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-linkedin.svg" alt="Partager sur LinkedIn" />
+            </div>
+          </a>
+          <a class="sharing-btn sharing-btn--circle sharing-btn--whatsapp" href="whatsapp://send?text=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+            <span class="sharing-btn__bg"></span>
+            <div class="icon icon--whatsapp">
+              <img src="/sites/all/themes/slatefr/static/svg/icon-whatsapp.svg" alt="Partager sur Whatsapp" />
+            </div>
+          </a>
+        </div>
+        <div class="tags-container tags-container--border-top">
+          <span class="tags__label">En savoir plus:</span>
+          <div class="tags">
+                                    <a class="tag" href="/egalites/">
+              <span class="tag__label">Égalités</span>
+            </a>
+                        <a class="tag" href="/societe/">
+              <span class="tag__label">Société</span>
+            </a>
+                                                            <a class="tag" href="/dossier/7719/lgbt">
+              <span class="tag__label">LGBT</span>
+            </a>
+                        <a class="tag" href="/dossier/4663/mariage">
+              <span class="tag__label">mariage</span>
+            </a>
+                        <a class="tag" href="/dossier/161/etats-unis">
+              <span class="tag__label">Etats-Unis</span>
+            </a>
+                                  </div>
+        </div>
+        <div class="article-signature">
+                    <p class="signature__content"><a href="/source/slatefr">Slate.fr</a> </p>
+                  </div>
+
+        
+        <div class="bottom-content">
+          <div wibbitz="embed-player-widget"></div>
+
+          <div class="OUTBRAIN" data-src="http://www.slate.fr/story/161356/les-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" data-widget-id="AR_2" data-ob-template="slatefr" ></div>
+          <script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
+        </div>
+      </div>
+      <aside class="content-right col-md-4 col-300">
+        <div class="ad-container ad-container--aside">
+          <div id="div-gpt-ad-1520327189224-11" class=""><script>if(userAcceptCookies) { googletag.cmd.push(function() { googletag.display("div-gpt-ad-1520327189224-11"); }); }</script></div>        </div>
+
+        <div class="feed-articles-aside">
+  <p class="feed-articles-aside__label">À lire aussi</p>
+  <div class="feed-articles__articles">
+        <div class="article-small-list">
+      <div class="article-small-list__wrapper">
+        <div class="article-small-list__text">
+          <p class="article-small-list__title"><a href="/story/172023/julien-neel-lou-bd-culte">Lou, l'héroïne qui grandit entre les cases</a></p>
+          <span class="article-small-list__subtitle">Temps de lecture : 8 min</span>                  </div>
+        <div class="article-small-list__thumb">
+          <a href="/story/172023/julien-neel-lou-bd-culte"><img class="lazyload" data-full-src="/sites/default/files/styles/177x177/public/autoportrait_julien_neel.jpg" alt="Lou, l&#039;héroïne qui grandit entre les cases"></a>
+        </div>
+      </div>
+    </div>
+        <div class="article-small-list">
+      <div class="article-small-list__wrapper">
+        <div class="article-small-list__text">
+          <p class="article-small-list__title"><a href="/story/172308/glass-troubles-personnalite-hollywood-cinema-psychiatrie">Glass, Shutter Island, Fight Club... Hollywood fasciné par le trouble dissociatif de l'identité</a></p>
+          <span class="article-small-list__subtitle">Temps de lecture : 5 min</span>                  </div>
+        <div class="article-small-list__thumb">
+          <a href="/story/172308/glass-troubles-personnalite-hollywood-cinema-psychiatrie"><img class="lazyload" data-full-src="/sites/default/files/styles/177x177/public/_norman_bates_0.png" alt="Glass, Shutter Island, Fight Club... Hollywood fasciné par le trouble dissociatif de l&#039;identité"></a>
+        </div>
+      </div>
+    </div>
+        <div class="article-small-list">
+      <div class="article-small-list__wrapper">
+        <div class="article-small-list__text">
+          <p class="article-small-list__title"><a href="/societe/38-rue-merly-episode-4-meurtre-eva-bourseau-accuses-zakariya-taha-reconstitution-mensonges">Meurtre d'Eva Bourseau: «Tu veux vraiment savoir ce que j’ai vu?»</a></p>
+          <span class="article-small-list__subtitle">Temps de lecture : 15 min</span>                  </div>
+        <div class="article-small-list__thumb">
+          <a href="/societe/38-rue-merly-episode-4-meurtre-eva-bourseau-accuses-zakariya-taha-reconstitution-mensonges"><img class="lazyload" data-full-src="/sites/default/files/styles/177x177/public/slateevabourseau04b.jpg" alt="Meurtre d&#039;Eva Bourseau: «Tu veux vraiment savoir ce que j’ai vu?»"></a>
+        </div>
+      </div>
+    </div>
+      </div>
+</div>        
+                
+        <div class="ad-container ad-container--aside">
+          <div id="div-gpt-ad-1520327189224-12" class=""><script>if(userAcceptCookies) { googletag.cmd.push(function() { googletag.display("div-gpt-ad-1520327189224-12"); }); }</script></div>        </div>
+      </aside>
+    </div>
+  </div>
+</article>
+
+<section class="crossing-block relance-newsletter">
+  <div class="crossing-block__inner">
+    <div class="crossing-block__title">
+      <p class="crossing-block-title">Newsletters</p>
+    </div>
+    <div class="slider-container">
+      <div class="crossing-block__content slides">
+        <div class="newsletter-block slide">
+          <div class="newsletter-block__inner">
+            <p class="newsletter-title">La quotidienne de Slate</p>
+            <p class="newsletter-description">Une sélection personnalisée des articles de Slate tous les matins dans votre boîte mail.</p>
+            <div id="mc_embed_signup">
+              <form action="//slate.us11.list-manage.com/subscribe/post?u=22e9f19b5e27265bddef2006d&id=7d463ddc99" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate class="validate newsletter-form">
+                <div class="mc-field-group newsletter-form__input">
+                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                  <label for="mce-EMAIL">Votre e-mail</label>
+                </div>
+                <div class="newsletter-form__submit">
+                  <button type="submit" name="subscribe" id="mc-embedded-subscribe">S’abonner</button>
+                </div>
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;">
+                  <input type="text" name="b_22e9f19b5e27265bddef2006d_7d463ddc99" tabindex="-1" value="">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="newsletter-block slide">
+          <div class="newsletter-block__inner">
+            <p class="newsletter-title">Slate x Titiou</p>
+            <p class="newsletter-description">Tous les vendredis matin, l’humeur de Titiou Lecoq et sa sélection du meilleur des internets</p>
+            <div id="mc_embed_signup">
+              <form action="//slate.us11.list-manage.com/subscribe/post?u=22e9f19b5e27265bddef2006d&amp;id=d7bb8be269" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate class="validate newsletter-form">
+                <div class="mc-field-group newsletter-form__input">
+                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                  <label for="mce-EMAIL">Votre e-mail</label>
+                </div>
+                <div class="newsletter-form__submit">
+                  <button type="submit" name="subscribe" id="mc-embedded-subscribe">S’abonner</button>
+                </div>
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;">
+                  <input type="text" name="b_22e9f19b5e27265bddef2006d_d7bb8be269" tabindex="-1" value="">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="div-gpt-ad-1529408592037-0" class=""><script>if(userAcceptCookies) { googletag.cmd.push(function() { googletag.display("div-gpt-ad-1529408592037-0"); }); }</script></div><div class="article article-list">
+  <div class="row article-list__inner grid-container">
+    <div class="article-list__cover-wrapper col-sm-4">
+      <a href="/story/172458/depuis-protestations-hymne-americain-joueurs-noirs-nfl-moins-aimes-fans-blancs-usa">
+        <img class="article-list__cover cover fit lazyload" data-full-src="/sites/default/files/styles/1680x840/public/063_635802782.jpg" alt="Depuis les protestations lors de l’hymne américain, les joueurs noirs de NFL sont moins aimés par les fans blancs">
+        <div class="sharing-layer">
+          <div class="sharing__container">
+            <button data-share="fb" data-url="https://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F172458%2Fdepuis-protestations-hymne-americain-joueurs-noirs-nfl-moins-aimes-fans-blancs-usa" class="sharing__btn">
+              <div class="icon icon--fb">
+                <img src="/sites/all/themes/slatefr/static/svg/icon-fb.svg" alt="Partager sur Facebook" />
+              </div>
+            </button>
+            <button data-share="tw" data-url="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F172458%2Fdepuis-protestations-hymne-americain-joueurs-noirs-nfl-moins-aimes-fans-blancs-usa&text=Depuis+les+protestations+lors+de+l%E2%80%99hymne+am%C3%A9ricain%2C+les+joueurs+noirs+de+NFL+sont+moins+aim%C3%A9s+par+les+fans+blancs&via=slatefr" class="sharing__btn">
+              <div class="icon icon--twitter">
+                <img src="/sites/all/themes/slatefr/static/svg/icon-twitter.svg" alt="Partager sur Twitter" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="article-list__content col-sm-8">
+      <p class="content__title"><a href="/story/172458/depuis-protestations-hymne-americain-joueurs-noirs-nfl-moins-aimes-fans-blancs-usa">Depuis les protestations lors de l’hymne américain, les joueurs noirs de NFL sont moins aimés par les fans blancs</a></p>
+      <p class="content__chapo">Chaque année, une étude évalue la popularité des stars de la ligue de football américain. </p>
+      <p class="article-infos">
+                Repéré par <span class="author">Christophe-Cécil Garnier</span>
+                <span class="separator"> —</span> 19 janvier 2019        <span class="separator"> —</span> Temps de lecture : 2 min      </p>
+    </div>
+  </div>
+</div>
+<div class="article article-list">
+  <div class="row article-list__inner grid-container">
+    <div class="article-list__cover-wrapper col-sm-4">
+      <a href="/story/172425/publicite-gillette-sexisme-harcelement-trump-comportement-responsabilite-polemique">
+        <img class="article-list__cover cover fit lazyload" data-full-src="/sites/default/files/styles/1680x840/public/pub-gillette-sexisme.jpg" alt="Merci Gillette pour ta pub, on en avait vraiment besoin">
+        <div class="sharing-layer">
+          <div class="sharing__container">
+            <button data-share="fb" data-url="https://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F172425%2Fpublicite-gillette-sexisme-harcelement-trump-comportement-responsabilite-polemique" class="sharing__btn">
+              <div class="icon icon--fb">
+                <img src="/sites/all/themes/slatefr/static/svg/icon-fb.svg" alt="Partager sur Facebook" />
+              </div>
+            </button>
+            <button data-share="tw" data-url="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F172425%2Fpublicite-gillette-sexisme-harcelement-trump-comportement-responsabilite-polemique&text=Merci+Gillette+pour+ta+pub%2C+on+en+avait+vraiment+besoin&via=slatefr" class="sharing__btn">
+              <div class="icon icon--twitter">
+                <img src="/sites/all/themes/slatefr/static/svg/icon-twitter.svg" alt="Partager sur Twitter" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="article-list__content col-sm-8">
+      <p class="content__title"><a href="/story/172425/publicite-gillette-sexisme-harcelement-trump-comportement-responsabilite-polemique">Merci Gillette pour ta pub, on en avait vraiment besoin</a></p>
+      <p class="content__chapo">«Les garçons qui regardent aujourd’hui sont les hommes de demain.»</p>
+      <p class="article-infos">
+                                        <span class="author">Melinda Wenner Moyer</span>
+                                <span class="separator"> —</span> 19 janvier 2019        <span class="separator"> —</span> Temps de lecture : 6 min      </p>
+    </div>
+  </div>
+</div>
+<div class="article article-list">
+  <div class="row article-list__inner grid-container">
+    <div class="article-list__cover-wrapper col-sm-4">
+      <a href="/story/172398/inde-soeurs-pere-malade-habillees-hommes-business-familial">
+        <img class="article-list__cover cover fit lazyload" data-full-src="/sites/default/files/styles/1680x840/public/awning-1840339_1920.jpg" alt="En Inde, deux sœurs se travestissent pour maintenir le business familial">
+        <div class="sharing-layer">
+          <div class="sharing__container">
+            <button data-share="fb" data-url="https://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F172398%2Finde-soeurs-pere-malade-habillees-hommes-business-familial" class="sharing__btn">
+              <div class="icon icon--fb">
+                <img src="/sites/all/themes/slatefr/static/svg/icon-fb.svg" alt="Partager sur Facebook" />
+              </div>
+            </button>
+            <button data-share="tw" data-url="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F172398%2Finde-soeurs-pere-malade-habillees-hommes-business-familial&text=En+Inde%2C+deux+s%C5%93urs+se+travestissent+pour+maintenir+le+business+familial&via=slatefr" class="sharing__btn">
+              <div class="icon icon--twitter">
+                <img src="/sites/all/themes/slatefr/static/svg/icon-twitter.svg" alt="Partager sur Twitter" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="article-list__content col-sm-8">
+      <p class="content__title"><a href="/story/172398/inde-soeurs-pere-malade-habillees-hommes-business-familial">En Inde, deux sœurs se travestissent pour maintenir le business familial</a></p>
+      <p class="content__chapo">Jyoti et Neha se sont habillées en hommes pendant des années pour aider leur père malade. </p>
+      <p class="article-infos">
+                Repéré par <span class="author">Jasmine Parvine </span>
+                <span class="separator"> —</span> 17 janvier 2019        <span class="separator"> —</span> Temps de lecture : 2 min      </p>
+    </div>
+  </div>
+</div>
+
+<script src="/sites/all/themes/slatefr/scripts/vendors/jquery.min.js"></script>
+<script src="/sites/all/themes/slatefr/scripts/share.js?v=2"></script>
+<div id="div-gpt-ad-1520433120883-3" class=""><script>if(userAcceptCookies) { googletag.cmd.push(function() { googletag.display("div-gpt-ad-1520433120883-3"); }); }</script></div>  </div>
+  <footer class="footer-main">
+  <a class="slate-logo" href="/">
+    <img src="/sites/all/themes/slatefr/static/svg/slate-fr.svg" />
+  </a>
+  <nav class="footer__links">
+    <a class="footer__link" href="https://www.slate.com" target="_blank">Slate.com</a>
+    <a class="footer__link" href="https://www.slateafrique.com" target="_blank">Slate&nbsp;Afrique</a>
+    <a class="footer__link" href="/contacts/">Contacts</a>
+    <a class="footer__link" href="/qui-sommes-nous/">Qui sommes-nous</a>
+    <a class="footer__link" href="/story/28817/mentions-legales">Mentions légales</a>
+    <a class="footer__link" href="javascript:void(0)" onclick="window.__cmp('setConsentUiCallback', checkConsents),window.__cmp('displayConsentUi')">Gestion des données personnelles</a>
+  </nav>
+  <nav class="footer__socials">
+    <span class="socials__title">Suivez-nous :</span>
+    <div class="social-links">
+      <a class="social-link" href="https://www.facebook.com/SlateFrance/" target="_blank">
+        <div class="icon icon--fb icon--circle"></div>
+      </a>
+      <a class="social-link" href="https://twitter.com/slatefr" target="_blank">
+        <div class="icon icon--twitter icon--circle"></div>
+      </a>
+      <a class="social-link" href="https://www.youtube.com/channel/UC1yLBhh8eDSPm-_Hgz8AvNA" target="_blank">
+        <div class="icon icon--youtube icon--circle"></div>
+      </a>
+      <a class="social-link" href="https://www.instagram.com/slatefrance/" target="_blank">
+        <div class="icon icon--instagram icon--circle"></div>
+      </a>
+    </div>
+  </nav>
+</footer></div>
+<header class="header  is-single">
+  <button class="header-menu-icon">
+    <div class="menu-icon-bars">
+      <div class="menu-icon-bar"></div>
+      <div class="menu-icon-bar"></div>
+      <div class="menu-icon-bar"></div>
+    </div>
+  </button>
+  <nav class="categories-navigation">
+    <a class="link-categorie" href="/">Magazine</a>
+    <a class="link-categorie" href="/podcasts/">Podcasts</a>
+    <a class="link-categorie" href="/grand-format/">Grands Formats</a>
+  </nav>
+  <a class="slate-logo" href="/">
+        <div class="slate-logo__fr purple"></div>
+        <img src="/sites/all/themes/slatefr/static/svg/slate-purple.svg" />
+      </a>
+    <div class="header-right-part">
+        <div class="sharing-container">
+      <div class="sharing-tools">
+        <a data-share="fb" data-url="https://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" class="sharing-btn sharing-btn--circle sharing-btn--fb" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+          <span class="sharing-btn__bg"></span>
+          <div class="icon icon--fb">
+            <img src="/sites/all/themes/slatefr/static/svg/icon-fb.svg" alt="Partager sur Facebook" />
+          </div>
+                  </a>
+        <a href="fb-messenger://share/?link=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&app_id=328225707698687" class="sharing-btn sharing-btn--circle sharing-btn--messenger" target="_blank">
+          <span class="sharing-btn__bg"></span>
+          <div class="icon icon--messenger">
+            <img src="/sites/all/themes/slatefr/static/svg/icon-messenger-white.svg" alt="Partager sur Facebook Messenger" />
+          </div>
+        </a>
+        <a href="https://www.facebook.com/dialog/send?app_id=328225707698687&link=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&redirect_uri=http://www.slate.fr/" class="sharing-btn sharing-btn--circle sharing-btn--messenger sharing-btn--messenger-desktop" target="_blank">
+          <span class="sharing-btn__bg"></span>
+          <div class="icon icon--messenger">
+            <img src="/sites/all/themes/slatefr/static/svg/icon-messenger-white.svg" alt="Partager sur Facebook Messenger" />
+          </div>
+        </a>
+        <a data-share="tw" data-url="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&text=Les+musulmans+sont+plus+nombreux+%C3%A0+soutenir+le+mariage+homosexuel+que+les+%C3%A9vang%C3%A9listes+blancs&via=slatefr" class="sharing-btn sharing-btn--circle sharing-btn--twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes&text=Les+musulmans+sont+plus+nombreux+%C3%A0+soutenir+le+mariage+homosexuel+que+les+%C3%A9vang%C3%A9listes+blancs&via=slatefr">
+          <span class="sharing-btn__bg"></span>
+          <div class="icon icon--twitter">
+            <img src="/sites/all/themes/slatefr/static/svg/icon-twitter.svg" alt="Partager sur Twitter" />
+          </div>
+        </a>
+        <a data-share="li" data-url="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes" class="sharing-btn sharing-btn--circle sharing-btn--linkedin" href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+          <span class="sharing-btn__bg"></span>
+          <div class="icon icon--linkedin">
+            <img src="/sites/all/themes/slatefr/static/svg/icon-linkedin.svg" alt="Partager sur LinkedIn" />
+          </div>
+        </a>
+        <a class="sharing-btn sharing-btn--circle sharing-btn--whatsapp" href="whatsapp://send?text=http%3A%2F%2Fwww.slate.fr%2Fstory%2F161356%2Fles-musulmans-sont-plus-nombreux-soutenir-le-mariage-homosexuel-que-les-evangelistes">
+          <span class="sharing-btn__bg"></span>
+          <div class="icon icon--whatsapp">
+            <img src="/sites/all/themes/slatefr/static/svg/icon-whatsapp.svg" alt="Partager sur Whatsapp" />
+          </div>
+        </a>
+      </div>
+      <span class="separator"></span>
+    </div>
+            <a class="newsletters" href="/newsletters/">
+      <span class="label">Newsletters</span>
+      <div class="icon icon--mail purple"></div>
+    </a>
+    <span class="separator"></span>
+        <div class="btns">
+      <button class="btn btn--search u-reset-btn">
+        <div class="icon icon--search purple"></div>
+      </button>
+      <button class="btn btn--close-search u-reset-btn">
+        <div class="icon icon--cross">
+          <span class="icon__bar"></span>
+          <span class="icon__bar"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+  </header><div class="main-menu-container">
+  <div class="layer--dark layer"></div>
+  <div class="layer--light layer col-md-4"></div>
+  <div class="row main-menu__inner">
+    <div class="col-md-4 main-menu__navigation">
+      <button class="navigation__close-btn">
+        <div class="icon icon--cross">
+          <span class="icon__bar"></span>
+          <span class="icon__bar"></span>
+        </div>
+        <span class="label">Fermer</span>
+      </button>
+      <ul class="navigation__inner vs" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        <li class="navigation__link">
+          <a href="/">Accueil</a>
+        </li>
+        <li class="navigation__link navigation__link--hover navigation__link--current" itemprop="name">
+          <a itemprop="url" href="/monde/" name="monde">Monde</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/societe/" name="societe">Société</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/politique/" name="politique">Politique</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/economie/" name="economie">Économie</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/culture/" name="culture">Culture</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/tech-internet/" name="internet">Tech & internet</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/medias/" name="medias">Médias</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/egalites/" name="egalites">Égalités</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/enfants/" name="enfants">Parents & enfants</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/boire-manger/" name="bien-manger">Boire & manger</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/sciences/" name="science">Sciences</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/sante/" name="sante">Santé</a>
+        </li>
+        <li class="navigation__link navigation__link--hover" itemprop="name">
+          <a itemprop="url" href="/sports/" name="sports">Sports</a>
+        </li>
+        <li class="navigation__separator"></li>
+        <li class="navigation__link" itemprop="name">
+          <a itemprop="url" href="/grand-format/">Grands formats</a>
+        </li>
+        <li class="navigation__separator"></li>
+        <li class="navigation__link" itemprop="name">
+          <a itemprop="url" href="/podcasts/">Podcasts</a>
+        </li>
+        <li class="navigation__separator"></li>
+        <li class="navigation__link">
+          <a href="/newsletters/">Newsletters</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-auto main-menu__feed">
+      <div class="feed__inner vs"></div>
+    </div>
+  </div>
+</div>
+  
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-7229822-2', 'auto', {
+  'cookieExpires': 31560000
+});
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview', {
+  'dimension1':  'Slate.fr'
+});
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+<!-- Chartbeat -->
+<script>
+var _sf_async_config = _sf_async_config || {};
+_sf_async_config.uid = 55880;
+_sf_async_config.domain = 'slate.fr';
+_sf_async_config.useCanonical = true;
+if(typeof userAcceptCookies === 'undefined' || !userAcceptCookies) _sf_async_config.noCookies = true;
+_sf_async_config.sections = 'Égalités';
+_sf_async_config.authors = 'Slate.fr';
+(function() {
+  function loadChartbeat() {
+    var e = document.createElement('script');
+    e.setAttribute('language', 'javascript');
+    e.setAttribute('type', 'text/javascript');
+    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+    document.body.appendChild(e);
+  }
+  var oldonload = window.onload;
+  window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() {
+    oldonload();
+    loadChartbeat();
+  };
+})();
+</script>
+
+<!-- comScore -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "14078442" });
+(function() {
+  if(typeof userAcceptCookies !== 'undefined' && userAcceptCookies) {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+    s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  }
+})();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=14078442&amp;cv=2.0&amp;cj=1" alt="" />
+</noscript>
+
+<!-- estat/mediametrie -->
+<script>
+function _eStat_Whap_loaded_func () {
+ eStatWhap.serial("800000207056");
+ eStatWhap.send();
+}
+(function() {
+  var myscript = document.createElement('script');
+  myscript.src = ('https:' == document.location.protocol ? 'https://' :
+  'http://') + 'w.estat.com/js/whap.js';
+  myscript.setAttribute('async', 'true');
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(myscript, s);
+})();
+</script>
+
+<!-- Nuggad -->
+<script defer>
+var nugg4Rubicon = "";
+var nuggrid = encodeURIComponent(top.location.href);
+var nuggscr = document.createElement('script');
+nuggscr.type = 'text/javascript';
+nuggscr.src = '//lpm-slate.nuggad.net/rc?nuggn=617480748&nuggsid=108575044&nuggrid='+nuggrid+'';
+var n = document.getElementsByTagName('script')[0];
+n.parentNode.insertBefore(nuggscr, n);
+</script>
+
+<!-- Ariane -->
+
+<!-- Quantcast -->
+<script>
+var _qevents = _qevents || [];
+(function() {
+  var elem = document.createElement('script');
+  elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+  elem.async = true;
+  elem.type = "text/javascript";
+  var scpt = document.getElementsByTagName('script')[0];
+  scpt.parentNode.insertBefore(elem, scpt);
+})();
+_qevents.push({qacct:"p-wmHYJbTCYsARY"});
+</script>
+<noscript>
+<div style="display:none;">
+  <img src="//pixel.quantserve.com/pixel/p-wmHYJbTCYsARY.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+
+<div id="ads-loading-div"></div>
+<script>
+if(typeof userAcceptCookies !== 'undefined' && userAcceptCookies) {
+  var div = document.getElementById('ads-loading-div');
+  var jsWibbitz = document.createElement("script");
+
+  jsWibbitz.src = "//cdn4.wibbitz.com/slate/embed.js";
+  jsWibbitz.setAttribute('async', 'async');
+
+  div.appendChild(jsWibbitz);
+}
+</script>
+
+<script>
+(function(){
+  function loadOwnpageScript(e){var t="https://script.ownpage.fr/v1/",a=document.createElement("script"),n=document.getElementsByTagName("script")[0];a.type="text/javascript",a.defer=1,a.async=1,a.src=t+"ownpage.js",a.onload=e,a.readyState?a.onreadystatechange=function(){("loaded"==a.readyState||"complete"==a.readyState)&&(a.onreadystatechange=null,e&&"function"==typeof e&&e())}:a.onload=function(){e&&"function"==typeof e&&e()},n.parentNode.insertBefore(a,n)}
+
+  loadOwnpageScript(function () {
+    var USER_ID = ""; // TODO: set to known user ID (if logged in) or leave empty
+    Ownpage.trackPage("fa6344252432420c", USER_ID);
+  });
+})();
+</script>
+
+  <div id="cookies-container" style="display:none"></div>
+  <script src="/sites/all/themes/slatefr/scripts/vendors/tweenmax.min.js"></script>
+  <script src="/sites/all/themes/slatefr/scripts/main.js?v=12"></script>
+</body>
+</html>

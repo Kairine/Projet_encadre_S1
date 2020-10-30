@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]> <html class="no-js ie-7 oldie" lang="fr-FR"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie-8 oldie" lang="fr-FR"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie-9 oldie" lang="fr-FR"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="fr-FR" moznomarginboxes mozdisallowselectionprint> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.euractiv.fr/xmlrpc.php">
+    <link rel="shortcut icon" href="https://www.euractiv.fr/wp-content/themes/euractiv_fr/favicon.ico" />
+
+        <link rel="stylesheet" href="https://www.euractiv.fr/wp-content/themes/euractiv/media/frontend/branding/hooks/print.css"  media="print" async="async"/>
+    
+            <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ec8c3035cd2e0ab2e3760549e/d0c8c196a47e4046cd91598a0.js");</script>
+    
+    <script>document.documentElement.className = 'js';</script>
+
+    <style>.no-js .hidden-no-js {display:none;}</style>
+    <title>L’Italie condamnée pour son retard sur le mariage gay &#8211; EURACTIV.fr</title>
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//www.euractiv.fr' />
+<link rel="alternate" type="application/rss+xml" title="EURACTIV.fr &raquo; L’Italie condamnée pour son retard sur le mariage gay Flux des commentaires" href="https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/feed/" />
+<script class="ea-asset-inline">(function(win,err){"use strict";win.EA=win.EA||{};win.EA.data=function(offset,default_value){if(!win.EA.js_transport){err("js_transport object not defined");return undefined;}
+if(!win.jQuery){err("jQuery not ready yet");return undefined;}
+var o;var data=win.jQuery.extend({},win.EA.js_transport);offset=offset.split(".");while(offset.length&&undefined!==data){o=offset.shift();data=data[o];}
+if(undefined===data){return default_value;}
+return data;};}(window,window.console.error));(function(win,doc){"use strict";var attach=win.addEventListener||function(event,fn){win.attachEvent("on"+event,fn);};var raf=win.requestAnimationFrame||win.mozRequestAnimationFrame||win.webkitRequestAnimationFrame||win.msRequestAnimationFrame;var match_proto=(function(){var p="http:";if(doc.location.protocol==="https:"){p="https:";}
+return function(url,ssl_url){if(p==="https:"){url=ssl_url||url;}
+if(url.substr(0,2)==="//"){url=p+url;}
+return url;};}());win.EA=win.EA||{};win.EA.defer={};win.EA.defer.css=function(href,ssl_href){var cb=function(){var l=doc.createElement("link");l.rel="stylesheet";l.href=match_proto(href,ssl_href);var s=doc.getElementsByTagName("script")[0];s.parentNode.insertBefore(l,s);};if(raf){raf(cb);}else{attach("load",cb);}};win.EA.defer.js=function(src,ssl_src){var s=doc.createElement("script");s.async=true;s.src=match_proto(src,ssl_src);var n=doc.getElementsByTagName("script")[0];n.parentNode.insertBefore(s,n);};}(window,document));(function(win,u){"use strict";var i;var methods=""
++"assert clear count debug log dir dirxml error exception group "
++"groupCollapsed groupEnd info log profile profileEnd table time "
++"timeEnd timeStamp trace warn";function noop(){return undefined;}
+if(u===win.console){win.console={};}
+methods=methods.split(" ");for(i=0;i<methods.length;i+=1){if(u===win.console[methods[i]]){win.console[methods[i]]=noop;}}}(window,undefined));</script><link rel="stylesheet" id="contact-form-7-css" href="https://www.euractiv.fr/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0.3" type="text/css" media="all">
+<script type="text/javascript" src="https://www.euractiv.fr/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type="text/javascript" src="https://www.euractiv.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<script type="text/javascript" async src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js?ver=4.9.5"></script>
+<link rel='https://api.w.org/' href='https://www.euractiv.fr/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.euractiv.fr/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.euractiv.fr/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='L&rsquo;Europe au coeur des négociations de la coalition allemande' href='https://www.euractiv.fr/section/avenir-de-l-ue/news/future-of-eu-to-dominate-germany-coalition-talks/' />
+<link rel='next' title='Borissov prévoit un Brexit «dur»' href='https://www.euractiv.fr/section/royaume-uni-en-europe/news/borissov-on-brexit-nothing-is-agreed-until-everything-is-agreed-2/' />
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='https://www.euractiv.fr/?p=368372' />
+<link rel="alternate" type="application/json+oembed" href="https://www.euractiv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.euractiv.fr%2Fsection%2Fsoci-t%2Fnews%2Fitaly-condemned-again-for-failing-to-recognise-same-sex-marriages%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.euractiv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.euractiv.fr%2Fsection%2Fsoci-t%2Fnews%2Fitaly-condemned-again-for-failing-to-recognise-same-sex-marriages%2F&#038;format=xml" />
+<style>
+body.body-logged-in .navbar-fixed-top{ top: 46px !important; }
+body.logged-in .navbar-fixed-top{ top: 46px !important; }
+@media only screen and (min-width: 783px) {
+body.body-logged-in .navbar-fixed-top{ top: 28px !important; }
+body.logged-in .navbar-fixed-top{ top: 28px !important; }
+}</style>
+<link rel="canonical" href="https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/" />
+<meta name="description" content="La Cour européenne des droits de l’Homme a condamné l’Italie le 14 décembre pour son incapacité à instaurer le mariage homosexuel. Un verdict qui débouche sur une compensation financière symbolique pour les plaignants, et ternit encore plus l’image du pays à ce sujet.
+
+&nbsp;" /><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="" />  <meta name="twitter:title" content="L’Italie condamnée pour son retard sur le mariage gay"/>  <meta name="twitter:description" content="La Cour européenne des droits de l’Homme a condamné l’Italie le 14 décembre pour son incapacité à instaurer le mariage homosexuel. Un verdict qui débouche sur une compensation financière symbolique pour les plaignants, et ternit encore plus l’image du pays à ce sujet.
+
+&nbsp;"/> <meta name="twitter:image" content="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/shutterstock_295964384-800x450.jpg"/>  <meta property="og:title" content="L’Italie condamnée pour son retard sur le mariage gay"/><meta property="og:url" content="https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/"/> <meta property="og:type"   content="article" /> <meta property="og:site_name"   content="euractiv.com" /> <meta property="og:image"  content="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/shutterstock_295964384-800x450.jpg"/>  <meta property="og:description" content="La Cour européenne des droits de l’Homme a condamné l’Italie le 14 décembre pour son incapacité à instaurer le mariage homosexuel. Un verdict qui débouche sur une compensation financière symbolique pour les plaignants, et ternit encore plus l’image du pays à ce sujet.
+
+&nbsp;"/> <meta property="article:published_time" content="2017-12-15 09:45:15"/><meta property="og:image:alt" content="https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/"/> <meta property="article:author" content="Paola Tamma"/> <meta property="article:section"  content="Société"/> <meta property="article:tag" content="Cour européenne des droits de l’Homme"/> <meta property="article:tag" content="Italie"/> <meta property="article:tag" content="mariage gay"/> <meta property="article:tag" content="mariage homosexuel"/><link rel="icon" href="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/02/ea_favicon_32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/02/ea_favicon_32x32.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/02/ea_favicon_32x32.png" />
+<meta name="msapplication-TileImage" content="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/02/ea_favicon_32x32.png" />
+<!--[if lt IE 9]><script type="text/javascript" src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]--><link class="ea-asset-head" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<noscript><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"></noscript>
+<noscript><link href="https://www.euractiv.fr/wp-content/ea-asset-cache/aggr-bc3d92220ad82763734663fe7a146fe9.min.css" rel="stylesheet"></noscript>
+<link class="ea-asset-head" href="/wp-content/ea-asset-cache/aggr-0a75d7ee6e6c129d08b9987866f1da86.min.css" rel="stylesheet" media="screen">
+<script class="ea-asset-head" src="/wp-content/ea-asset-cache/aggr-bb962c6f2d3fa262d6e745ea4b151355.min.js" async ></script>    
+    
+<!--Google Tag Manager-->
+<script> (function (w,d,s,l,i){
+w[l] = w[l] || [];
+w[l] . push({'gtm.start':
+new Date() . getTime(),event:'gtm.js'});var f = d . getElementsByTagName(s)[0],
+j = d . createElement(s),dl = l != 'dataLayer' ? '&l=' + l : '';j . async = true;j . src =
+'https://www.googletagmanager.com/gtm.js?id=' + i + dl;f . parentNode . insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-THJBSRW');
+
+
+dataLayer.push({
+    'event': 'virtual_uri',
+    'url': '/soci_t-politique/non-sponsored/news/non-sales/editorial/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/368372/','author_name':'paola_tamma','content_provider_name':'euractiv_com','translator_name':'marion_candau','tags':'cour_europeenne_des_droits_de_lhomme-italie-mariage_gay-mariage_homosexuel-politique-soci_t'
+});
+
+
+</script> 
+<!--End Google Tag Manager-->
+
+
+</head>
+
+<body class="news-template-default single single-news postid-368372 single-format-standard ea-color-grey">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THJBSRW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="visible-print-block">
+    <div class="container print-container">
+        <div class="row">
+            <div class="col-print-3">
+            </div>
+            <div class="col-print-6">
+                <img src="https://www.euractiv.fr/wp-content/themes/euractiv/media/frontend/branding/logo_print.png" class="img img-responsive" alt="EURACTIV logo"/>
+            </div>
+            <div class="col-print-3">
+            </div>
+        </div>
+    </div>
+    <br style="clear:both"/>
+</header>
+
+
+<header class="hidden-print">
+        <nav id="ea-ancillary-menu" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button
+                    id="ea-ancillary-toggle"
+                    type="button"
+                    class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#ea-ancillary-menu-collapse"
+                ><i class="fa fa-bars"></i></button>
+                    <button
+        id="ea-primary-toggle"
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#ea-primary-menu"
+    >Sections <i class="fa fa-caret-down"></i></button>
+                    <a
+                    class="navbar-brand"
+                    href="https://www.euractiv.fr"
+                ><img
+                    src="https://www.euractiv.fr/wp-content/themes/euractiv/media/frontend/branding/logo.png"
+                    alt="EURACTIV.fr"
+                ></a>
+                            </div>
+            <div class="collapse navbar-collapse" id="ea-ancillary-menu-collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li id="ea-social-header-links" class="hidden-sm"><a href="http://www.facebook.com/EURACTIV.fr/" title="EURACTIV Facebook" class="fa fa-facebook"></a><a href="http://twitter.com/EURACTIV_FR" title="EURACTIV Twitter" class="fa fa-twitter"></a><a href="http://www.linkedin.com/company/euractiv-fr" title="EURACTIV LinkedIn" class="fa fa-linkedin"></a><a href="http://plus.google.com/102741426703481269919/posts" title="EURACTIV Google Plus" class="fa fa-google-plus"></a><a href="http://www.youtube.com/euractiv" title="Vidéos d'EURACTIV" class="fa fa-youtube-play"></a><a href="https://euractiv.us15.list-manage.com/subscribe?u=ec8c3035cd2e0ab2e3760549e&id=c59e2fd7a9" title="EURACTIV Newsletters" class="fa fa-envelope"></a></li><li><a href="https://www.euractiv.fr/wp-login.php">Connexion / Inscription</a></li><li><a href="http://events.euractiv.com" target="_blank">Events</a></li><li class="dropdown" id="ea-network-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Réseau EURACTIV            <span class="caret"></span>
+        </a>
+        <div class="dropdown-menu container">
+            <ul class="nav nav-pills" id="ea-network-links"></ul>
+            <hr class="hidden-xs">
+            <div class="row hidden-xs">
+                <div class="col-lg-3 col-lg-offset-1 col-md-3 hidden-sm" id="ea-network-map"></div>
+                <div class="col-lg-8 col-md-9" id="ea-network-headlines">
+                    <p><i class="fa fa-circle-o-notch fa-spin"></i></p>
+                </div>
+            </div>
+        </div>
+    </li>
+   
+
+    <li>
+        <form
+            class="navbar-form hidden-xs hidden-sm"
+            method="get" 
+            action="https://www.euractiv.fr"
+        >
+            <div class="input-group input-group-sm">
+                <input
+                    type="text"
+                    class="form-control hidden-sm hidden-md"
+
+                    name="s"
+                    placeholder="Chercher"
+                >
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        <a class="hidden-md hidden-lg" href="#" data-toggle="modal" data-target="#searchModal">Chercher</a> 
+    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav
+        id="ea-primary-menu"
+        class="navbar navbar-default collapse navbar-collapse navbar-fixed-top"
+        data-more="&lt;li&gt;&lt;a href=&#039;#&#039;&gt;Plus&lt;/a&gt;&lt;/li&gt;"
+     >
+        <div class="container" id="scrollable-fixed">
+            <ul class="nav navbar-nav" id="ea-navigation-list">
+                <li class="dropdown ea-cluster">
+                    <a href="https://www.euractiv.fr/sections/economie/" class="dropdown-toggle" data-toggle="dropdown">Économie</a>
+                    <div class="dropdown-menu">
+                        <p><a href="https://www.euractiv.fr/sections/economie/">Économie</a></p>
+                        <hr>
+                        <div><ul><li><a href="https://www.euractiv.fr/sections/commerce-industrie/">Commerce&nbsp;international</a></li><li><a href="https://www.euractiv.fr/sections/concurrence/">Concurrence</a></li><li><a href="https://www.euractiv.fr/sections/innovation-entreprises/">Entreprises</a></li><li><a href="https://www.euractiv.fr/sections/europe-sociale/">Europe&nbsp;sociale</a></li><li><a href="https://www.euractiv.fr/sections/euro-finances/">Finance</a></li><li><a href="https://www.euractiv.fr/sections/fiscalite/">Fiscalité</a></li><li><a href="https://www.euractiv.fr/sections/societe-de-l-information/">Numérique</a></li><li><a href="https://www.euractiv.fr/sections/zone-euro/">Zone&nbsp;euro</a></li></ul></div>
+                    </div>
+                </li><li class="dropdown ea-cluster">
+                    <a href="https://www.euractiv.fr/sections/monde/" class="dropdown-toggle" data-toggle="dropdown">Monde</a>
+                    <div class="dropdown-menu">
+                        <p><a href="https://www.euractiv.fr/sections/monde/">Monde</a></p>
+                        <hr>
+                        <div><ul><li><a href="https://www.euractiv.fr/sections/l-europe-dans-le-monde/">Affaires&nbsp;étrangères</a></li><li><a href="https://www.euractiv.fr/sections/aide-au-developpement/">Aide&nbsp;au&nbsp;développement</a></li><li><a href="https://www.euractiv.fr/sections/elargissement/">Élargissement</a></li><li><a href="https://www.euractiv.fr/sections/migrations/">Migrations</a></li></ul></div>
+                    </div>
+                </li><li class="dropdown ea-cluster">
+                    <a href="https://www.euractiv.fr/sections/plan-te/" class="dropdown-toggle" data-toggle="dropdown">Planète</a>
+                    <div class="dropdown-menu">
+                        <p><a href="https://www.euractiv.fr/sections/plan-te/">Planète</a></p>
+                        <hr>
+                        <div><ul><li><a href="https://www.euractiv.fr/sections/agriculture-alimentation/">Agriculture</a></li><li><a href="https://www.euractiv.fr/sections/climat/">Climat</a></li><li><a href="https://www.euractiv.fr/sections/developpement-durable/">Développement&nbsp;durable</a></li><li><a href="https://www.euractiv.fr/sections/energie/">Énergie</a></li><li><a href="https://www.euractiv.fr/sections/sciences-legislation/">Sciences</a></li><li><a href="https://www.euractiv.fr/sections/transport/">Transport</a></li></ul></div>
+                    </div>
+                </li><li class="dropdown ea-cluster">
+                    <a href="https://www.euractiv.fr/sections/politique/" class="dropdown-toggle" data-toggle="dropdown">Politique</a>
+                    <div class="dropdown-menu">
+                        <p><a href="https://www.euractiv.fr/sections/politique/">Politique</a></p>
+                        <hr>
+                        <div><ul><li><a href="https://www.euractiv.fr/sections/affaires-publiques/">Affaires&nbsp;publiques</a></li><li><a href="https://www.euractiv.fr/sections/avenir-de-l-ue/">Avenir&nbsp;de&nbsp;l&#039;UE</a></li><li><a href="https://www.euractiv.fr/sections/royaume-uni-en-europe/">Brexit</a></li><li><a href="https://www.euractiv.fr/sections/elections/">Élections</a></li><li><a href="https://www.euractiv.fr/sections/institutions/">Institutions</a></li><li><a href="https://www.euractiv.fr/sections/regions/">Régions</a></li><li><a href="https://www.euractiv.fr/sections/securite/">Sécurité</a></li></ul></div>
+                    </div>
+                </li><li class="dropdown ea-cluster">
+                    <a href="https://www.euractiv.fr/sections/soci-t/" class="dropdown-toggle" data-toggle="dropdown">Société</a>
+                    <div class="dropdown-menu">
+                        <p><a href="https://www.euractiv.fr/sections/soci-t/">Société</a></p>
+                        <hr>
+                        <div><ul><li><a href="https://www.euractiv.fr/sections/culture/">Culture</a></li><li><a href="https://www.euractiv.fr/sections/education/">Éducation</a></li><li><a href="https://www.euractiv.fr/sections/justice-affaires-interieures/">Justice</a></li><li><a href="https://www.euractiv.fr/sections/l-europe-dans-le-93/">L&#039;Europe&nbsp;dans&nbsp;le&nbsp;93&nbsp;!</a></li><li><a href="https://www.euractiv.fr/sections/langues-culture/">Langues</a></li><li><a href="https://www.euractiv.fr/sections/medias/">Medias</a></li><li><a href="https://www.euractiv.fr/sections/mode-de-vie/">Mode&nbsp;de&nbsp;vie</a></li><li><a href="https://www.euractiv.fr/sections/sante-modes-de-vie/">Santé</a></li></ul></div>
+                    </div>
+                </li>            </ul>
+        </div>
+    </nav></header>
+
+<div class="container" id="main_container">
+    <div class="ea-gat-slot-wrapper hidden-xs"><div id="ea-gat-slot-5bfea3f4bb8bb" class="ea-gat-slot" data-adunitpath="306731698/EurActiv.fr/Homepage" data-size="728,90" data-size2="728,210" data-pos="top" data-value=""></div></div><ol id="ea-breadcrumb" class="breadcrumb"><li><a href="https://www.euractiv.fr">Accueil</a></li><li><a href="https://www.euractiv.fr/news/">Actualités</a></li><li><a href="https://www.euractiv.fr/sections/soci-t/">Société</a></li><li class="active">L’Italie condamnée pour son retard sur le mariage gay</li></ol>
+
+<section class="ea-post-title">
+
+    <h1>L’Italie condamnée pour son retard sur le mariage gay</h1></section>
+
+<section class="row">
+    <article class="ea-article col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="ea-article-header">
+            <div class="ea-article-meta clearfix">
+                <p class="ea-byline">Par :  <a href='https://www.euractiv.fr/authors/paola-tamma/'>Paola Tamma</a>  |  <a href='https://www.euractiv.fr/content_providers/euractiv-com/'>EURACTIV.com</a>  | translated by  <a href='https://www.euractiv.fr/translators/marion-candau/'>Marion Candau</a> </p><p><span class="ea-dateformat" data-timestamp="1513327515">
+            <i class="fa fa-calendar"></i> 15-12-2017
+        </span></p>            </div>
+            <div class="ea-article-header-content">
+                <div class="ea-article-featured-image">
+        <span class="ea-image-aspect-16x9"><img width="800" height="450" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/shutterstock_295964384-800x450.jpg" class="lazy lazy-hidden attachment-16x9 size-16x9 wp-post-image" alt="" /><noscript><img width="800" height="450" src="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/shutterstock_295964384-800x450.jpg" class="attachment-16x9 size-16x9 wp-post-image" alt="" /></noscript></span>
+    </div><div class="ea-image-meta clearfix"><p>[<a href="https://www.shutterstock.com/nl/image-photo/naples-italy-july-11-simulation-samesex-295964384?src=1s5Qc62OypP-QqBKxe9I1w-1-0" target="_blank">Vincenzo De Bernaardo/Shutterstock</a>]</p></div>            </div>
+        </div>
+
+        <div class="ea-article-body">
+            <div class="ea-article-meta clearfix">
+                <p class="ea-language-switcher">Langues : <a href="https://www.euractiv.com/section/justice-home-affairs/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/">English</a> | <a href="https://www.euractiv.de/section/soziales-europa/news/italien-erneut-fuer-nichtanerkennung-gleichgeschlechtlicher-ehen-bestraft/">Deutsch</a><p class="ea-social vsac-social"><a href="#ea-comments" target="_self" class="vsac-social-comments btn btn-sm"><i class="fa fa-commenting"></i><span class="hidden-xs hidden-sm">Commentaires</span></a> <a href="javascript:window.print()" target="_self" class="vsac-social-print btn btn-sm"><i class="fa fa-print"></i><span class="hidden-xs hidden-sm">Imprimer</span></a> <a href="//www.reddit.com/submit?url=https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/&title=L’Italie condamnée pour son retard sur le mariage gay" target="_blank" class="vsac-social-reddit btn btn-sm"><i class="fa fa-reddit"></i><span class="hidden-xs hidden-sm"> </span></a> </p>            </div>
+            <div class="ea-article-body-content">
+                <p>La Cour européenne des droits de l’Homme a condamné l’Italie le 14 décembre pour son incapacité à instaurer le mariage homosexuel. Un verdict qui débouche sur une compensation financière symbolique pour les plaignants, et ternit encore plus l’image du pays à ce sujet.</p>
+<p>Le refus de l’Italie de permettre aux couples de même sexe mariés à l’étranger d’enregistrer leur union les prive de protection juridique et viole leurs droits à avoir une famille, a statué la cour basée à Strasbourg.</p>
+<p>La Cour européenne des droits de l’Homme (CEDH) estime que le choix de l’Italie de ne pas autoriser les mariages de personnes de même sexe ne peut pas être condamné, mais que le cœur du problème est que les couples n’ont pu obtenir aucune reconnaissance légale de leur union.</p>
+<p>L’affaire a été lancée par six couples homosexuels mariés à l’étranger, qui n’ont pas réussi à faire reconnaître leur union par les autorités italienne. L’Italie devra verser 5 000 euros de compensation à chaque plaignant.</p>
+<p>Suite à un <a href="https://hudoc.echr.coe.int/eng#{&quot;itemid&quot;:[&quot;001-156265&quot;]}">autre verdict négatif</a> rendu en 2015 par la CEDH, qui a obligé l’Italie a créer un cadre légal pour la reconnaissance des droits des couples de même sexe, le pays à dominance catholique a adopté une loi en 2016 pour permettre aux couples homosexuels d’enregistrer leur « union civile », une disposition qui leur donne les droits d’un couple marié.</p>
+<p>Certains couples plaignants ont enregistré leur union dans le cadre de cette nouvelle loi, mais la Cour a reconnu qu’ils avaient été victimes de traitement injuste jusqu’en 2016.</p>
+<p>« Ce jugement confirme le fait que l’Italie paie toujours le prix de ses 15 ans de retard dans la reconnaissance de ce droit par rapport à d’autres pays européens », explique Gabriele Piazzoni, président d’ArgiGay Italie.</p>
+<p>En 2015, le Parlement européen a <a href="http://www.europarl.europa.eu/sides/getDoc.do?pubRef=-//EP//TEXT+TA+P8-TA-2015-0076+0+DOC+XML+V0//FR">adopté une résolution</a> reconnaissant le mariage et l’union civile de même sexe comme une question politique, sociale, humaine et des droits civils.</p>
+<p>Selon une <a href="http://ilga.org/downloads/Ilga_Riwi_Attitudes_LGBTI_survey_Logo_personal_political.pdf">enquête</a> de l’association internationale lesbienne et gay (ILGA) publiée en 2016, 43 % des Italiens interrogés sont favorables au mariage gay (35 % s’y opposent et 22 % n’ont pas d’avis).</p>
+<p>La semaine dernière, la cour constitutionnelle d’Autriche a légalisé le mariage homosexuel mais ne commencera à le faire appliquer qu’en 2019. En Europe, 15 pays reconnaissent actuellement ce droit, et 11 autres États reconnaissent une certaine forme d’union civile. Le mariage continue d’être uniquement défini comme une union entre un homme et une femme dans les constitutions bulgare, croate, hongroise, lettonne, lituanienne et polonaise.</p>
+<div class='row ea-own-embed'>
+<div class='own-embed-img hidden-xs col-sm-5 col-md-4 col-lg-3'><img width="800" height="533" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-800x533.jpg" class="lazy lazy-hidden attachment-4x3 size-4x3 wp-post-image ea-media-unrolled ea-media-formatted img-responsive" alt="" data-lazy-srcset="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04.jpg 800w, https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-768x512.jpg 768w, https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-150x100.jpg 150w, https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-450x300.jpg 450w" data-lazy-sizes="(max-width: 800px) 100vw, 800px"><noscript><img width="800" height="533" src="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-800x533.jpg" class="attachment-4x3 size-4x3 wp-post-image ea-media-unrolled ea-media-formatted img-responsive" alt="" srcset="https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04.jpg 800w, https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-768x512.jpg 768w, https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-150x100.jpg 150w, https://www.euractiv.fr/wp-content/uploads/sites/3/2017/12/Womens_March_2017-01_04-450x300.jpg 450w" sizes="(max-width: 800px) 100vw, 800px"></noscript></div>
+<div class='own-embed-excerpt col-xs-12 col-sm-7 col-md-8 col-lg-9'>
+<h4><a href='http://www.euractiv.fr/section/soci-t/news/backlask-of-regressive-laws-curtail-womens-rights-report-finds/'>Le Conseil de l’Europe s’alarme de la situation des droits des femmes</a></h4>
+<p>Les droits sexuels et reproductifs des femmes sont « en danger », s’inquiète le Conseil de l’Europe.</p>
+</p></div>
+</p></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div>
+        </div>
+
+        <div class="ea-article-footer">
+            <div class="ea-article-meta clearfix">
+                <p class="ea-language-switcher">Langues : <a href="https://www.euractiv.com/section/justice-home-affairs/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/">English</a> | <a href="https://www.euractiv.de/section/soziales-europa/news/italien-erneut-fuer-nichtanerkennung-gleichgeschlechtlicher-ehen-bestraft/">Deutsch</a><p class="ea-social vsac-social"><a href="#ea-comments" target="_self" class="vsac-social-comments btn btn-sm"><i class="fa fa-commenting"></i><span class="hidden-xs hidden-sm">Commentaires</span></a> <a href="javascript:window.print()" target="_self" class="vsac-social-print btn btn-sm"><i class="fa fa-print"></i><span class="hidden-xs hidden-sm">Imprimer</span></a> <a href="//www.reddit.com/submit?url=https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/&title=L’Italie condamnée pour son retard sur le mariage gay" target="_blank" class="vsac-social-reddit btn btn-sm"><i class="fa fa-reddit"></i><span class="hidden-xs hidden-sm"> </span></a> </p>            </div>
+            <div class="ea-article-footer-content">
+                <div class="ea-tagcloud clearfix">
+            <h3>Sujets&nbsp;&nbsp;<i class="fa fa-tag pull-right"></i></h3>
+            <ul class="clearfix">  <li><a href='https://www.euractiv.fr/tag/cour-europeenne-des-droits-de-lhomme/'>Cour européenne des droits de l’Homme</a></li> <li><a href='https://www.euractiv.fr/tag/italie/'>Italie</a></li> <li><a href='https://www.euractiv.fr/tag/mariage-gay/'>mariage gay</a></li> <li><a href='https://www.euractiv.fr/tag/mariage-homosexuel/'>mariage homosexuel</a></li> <li><a href='https://www.euractiv.fr/sections/politique/'>Politique</a></li> <li><a href='https://www.euractiv.fr/sections/soci-t/'>Société</a></li>  </ul>
+        </div><div class="ea-gat-slot-wrapper hidden-xs"><div id="ea-gat-slot-5bfea3f50385a" class="ea-gat-slot" data-adunitpath="306731698/EurActiv.fr/Homepage" data-size="728,90" data-size2="728,210" data-pos="bottom" data-value=""></div></div>                            </div>
+        </div>
+
+    </article>
+            <div class="ea-sidebar hidden-print col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <aside class="col-xs-12 col-sm-6 col-md-12 col-lg-12 ea-gat-slot-wrapper"><h6><span>Advertisement</span></h6><div id="ea-gat-slot-5bfea3f4bdccd" class="ea-gat-slot" data-adunitpath="306731698/EurActiv.fr/Homepage" data-size="300,250" data-size2="300,600" data-pos="top" data-value=""></div></aside><aside class="col-xs-12 col-sm-6 col-md-12 col-lg-12 ea-sponsorship-section-wrap ea-sponsorship-section-logo"><h3><span>Supporters</span></h3><ul
+            class="ea-sponsorship-section"
+            data-searchterm="EurActiv_fr"
+            data-membertypes="sponsor"
+            data-emptyclasses="hidden"
+        ></ul></aside><aside class="col-xs-12 col-sm-6 col-md-12 col-lg-12 ea-sponsorship-section-wrap ea-sponsorship-section-link"><h3><span>Membres  EURACTIV</span></h3><ul
+            class="ea-sponsorship-section"
+            data-searchterm="EurActiv_fr"
+            data-membertypes="euractor"
+            data-emptyclasses="hidden"
+        ></ul></aside><aside class="col-xs-12 col-sm-6 col-md-12 col-lg-12 ea-popular-posts"><h3><span>Popular articles</span></h3><ul class="ea-content-hint ea-content-hint-popular"><li><span>1</span><a href="https://www.euractiv.fr/section/migrations/news/six-eu-countries-and-counting-back-out-from-the-global-migration-pact/">Six pays membres refusent de signer le Pacte mondial sur l’immigration</a></li><li><span>2</span><a href="https://www.euractiv.fr/section/all/interview/eva-joly-la-commission-est-dirigee-par-levadeur-fiscal-en-chef/">Eva Joly: « la Commission est dirigée par l'évadeur fiscal en chef»</a></li><li><span>3</span><a href="https://www.euractiv.fr/section/plan-te/news/palm-oil-ban-on-the-ropes-as-commission-weighs-options/">L’interdiction de l’huile de palme donne du fil à retordre à l’UE</a></li><li><span>4</span><a href="https://www.euractiv.fr/section/sante-modes-de-vie/news/les-europeens-surcontamines-aux-dioxines/">Les Européens surcontaminés aux dioxines</a></li><li><span>5</span><a href="https://www.euractiv.fr/section/developpement-durable/news/spain-to-nix-nuclear-and-coal-power-by-2030/">Ni charbon ni nucléaire : la transition énergétique espagnole montre l'exemple</a></li><li><span>6</span><a href="https://www.euractiv.fr/section/royaume-uni-en-europe/news/brexit-deal-within-our-grasp-insists-may-after-eu-uk-deal-on-political-declaration/">Pour Theresa May, l’accord sur le Brexit « à portée de main »</a></li><li><span>7</span><a href="https://www.euractiv.fr/section/elections/news/strasbourg-utilise-limage-de-trump-pour-la-campagne-des-europeennes/">Strasbourg utilise l’image de Trump pour la campagne des européennes</a></li><li><span>8</span><a href="https://www.euractiv.fr/section/agriculture-alimentation/news/face-a-lagribashing-le-secteur-sorganise/">Face à l'agribashing, le secteur s'organise</a></li><li><span>9</span><a href="https://www.euractiv.fr/section/economie/news/le-parlement-renforce-le-pilier-social-europeen/">Le Parlement renforce le pilier social européen</a></li><li><span>10</span><a href="https://www.euractiv.fr/section/royaume-uni-en-europe/news/gibraltar-exaspere-detre-le-rocher-dans-la-chaussure-du-brexit/">Gibraltar exaspéré d’être le Rocher dans la chaussure du Brexit</a></li></ul> </aside><aside class="col-xs-12 col-sm-6 col-md-12 col-lg-12 ea-gat-slot-wrapper"><h6><span>Advertisement</span></h6><div id="ea-gat-slot-5bfea3f4bdeb5" class="ea-gat-slot" data-adunitpath="306731698/EurActiv.fr/Homepage" data-size="300,250" data-size2="300,600" data-pos="bottom" data-value=""></div></aside>        </div>
+    </section>
+
+
+
+
+    <section id="ea-comments" class="row"><aside class="col-xs-12">
+        <h3><span>Commentaires</span></h3>
+        
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		Une réponse à &#8220;L’Italie condamnée pour son retard sur le mariage gay&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment byuser comment-author-rogger even thread-even depth-1" id="comment-27145">
+				<div id="div-comment-27145" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Rogger</cite> <span class="says">dit :</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/#comment-27145">
+			15/12/2017 à 18:47</a>		</div>
+
+		<p>Dè quel droit la cours europeenne des droit de l&rsquo;homme se permet d&rsquo;imposer le mariage GAY ????<br />
+Personne ne les a élus et encore moins autoriser à s&rsquo;occuper de nos sociétées&#8230;</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://www.euractiv.fr/wp-login.php?redirect_to=https%3A%2F%2Fwww.euractiv.fr%2Fsection%2Fsoci-t%2Fnews%2Fitaly-condemned-again-for-failing-to-recognise-same-sex-marriages%2F">Connectez-vous pour répondre</a></div>
+				</div>
+		</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Laisser un commentaire <small><a rel="nofollow" id="cancel-comment-reply-link" href="/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/#respond" style="display:none;">Annuler la réponse.</a></small></h3><p class="must-log-in">Vous devez <a href="https://www.euractiv.fr/wp-login.php?redirect_to=https%3A%2F%2Fwww.euractiv.fr%2Fsection%2Fsoci-t%2Fnews%2Fitaly-condemned-again-for-failing-to-recognise-same-sex-marriages%2F">être connecté</a> pour publier un commentaire.</p>	</div><!-- #respond -->
+	    </aside></section>
+
+
+
+</div><!-- /.container -->
+
+<style>footer {margin-top:0px !important;} </style>
+        <div class="newsletter" style="background-color: #FFC709;padding:3em 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 class="text-center">Subscribe to our newsletters</h3>
+                        <a href="https://euractiv.us15.list-manage.com/subscribe?u=ec8c3035cd2e0ab2e3760549e&id=c59e2fd7a9" target="_blank"
+                           class="btn btn-lg btn-default">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer class="hidden-print">
+    <div class="container"><div class="row">
+            <hr class="col-xs-12 hidden-xs">
+    <nav id="ea-social-footer-links" class="col-xs-12 hidden-xs">
+        <ul><li><a href="http://www.facebook.com/EURACTIV.fr/" title="EURACTIV Facebook" class="fa fa-facebook"></a></li><li><a href="http://twitter.com/EURACTIV_FR" title="EURACTIV Twitter" class="fa fa-twitter"></a></li><li><a href="http://www.linkedin.com/company/euractiv-fr" title="EURACTIV LinkedIn" class="fa fa-linkedin"></a></li><li><a href="http://plus.google.com/102741426703481269919/posts" title="EURACTIV Google Plus" class="fa fa-google-plus"></a></li><li><a href="http://www.youtube.com/euractiv" title="Vidéos d'EURACTIV" class="fa fa-youtube-play"></a></li><li><a href="https://euractiv.us15.list-manage.com/subscribe?u=ec8c3035cd2e0ab2e3760549e&id=c59e2fd7a9" title="EURACTIV Newsletters" class="fa fa-envelope"></a></li></ul>
+    </nav>
+        <hr class="col-xs-12">
+    <nav id="ea-footer-nav" class="col-xs-12"><div class="row">
+        <nav id="menu-footer-menu" class="row"><div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 col-lg-offset-1"><h4><b>À Propos d&rsquo;EURACTIV</b></h4>
+<ul class="sub-menu">
+	<li id="menu-item-270227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-270227"><a href="https://www.euractiv.fr/a-propos/concept-et-objectifs/">Concept et objectifs</a>
+	<ul class="sub-menu">
+<span class="hidden"></span>	</ul>
+</li>
+	<li id="menu-item-270232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-270232"><a href="https://www.euractiv.fr/la-mission-editoriale-d-euractiv/">La mission éditoriale d&rsquo;EURACTIV</a>
+	<ul class="sub-menu">
+<span class="hidden"></span>	</ul>
+</li>
+	<li id="menu-item-300456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300456"><a href="https://www.euractiv.fr/opinion-criteria-structure-and-examples-for-external-contributions/">Soumettre une opinion</a></li>
+	<li id="menu-item-270256" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270256"><a href="https://www.euractiv.fr/euractiv-com-plc/">EURACTIV.com PLC</a></li>
+	<li id="menu-item-270220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-270220"><a href="https://www.euractiv.fr/reseau-et-partenaire-deuractiv/">Réseau et partenaire d&rsquo;EURACTIV</a>
+	<ul class="sub-menu">
+<span class="hidden"></span><span class="hidden"></span><span class="hidden"></span>	</ul>
+</li>
+</ul>
+</div><div class="col-xs-12 col-sm-4 col-md-3 col-lg-2"><h4><b>Bureau de presse</b></h4>
+<ul class="sub-menu">
+	<li id="menu-item-270276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270276"><a href="https://www.euractiv.fr/lectorat-euractiv/">Lectorat d&rsquo;EURACTIV</a></li>
+	<li id="menu-item-270351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270351"><a href="https://www.euractiv.fr/communiques-de-presse/">Communiqués de presse</a></li>
+	<li id="menu-item-299846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-299846"><a href="https://www.euractiv.fr/euractiv-netiquette/">Netiquette EURACTIV</a></li>
+	<li id="menu-item-270241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-270241"><a href="https://www.euractiv.fr/faq/">FAQ</a>
+	<ul class="sub-menu">
+<span class="hidden"></span>	</ul>
+</li>
+</ul>
+</div><div class="col-xs-12 col-sm-4 col-md-3 col-lg-2"><h4><b>Communication</b></h4>
+<ul class="sub-menu">
+	<li id="menu-item-270287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-270287"><a href="https://www.euractiv.fr/partenariat/">Partenariat</a>
+	<ul class="sub-menu">
+<span class="hidden"></span>	</ul>
+</li>
+	<li id="menu-item-270345" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-270345"><a href="https://www.euractiv.fr/euractor/">Euractor</a>
+	<ul class="sub-menu">
+<span class="hidden"></span>	</ul>
+</li>
+	<li id="menu-item-270288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270288"><a href="https://www.euractiv.fr/?page_id=270244">Services multimédia</a></li>
+	<li id="menu-item-379450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-379450"><a href="https://www.euractiv.fr/a-propos/eu-projects/">Projets européens</a></li>
+	<li id="menu-item-270340" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270340"><a href="https://www.euractiv.fr/publicite/">Publicité</a></li>
+</ul>
+</div><div class="col-xs-12 col-sm-4 col-md-3 col-lg-2"><h4><b>Offres d&#8217;emplois, agenda et PR</b></h4>
+<ul class="sub-menu">
+	<li id="menu-item-270271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270271"><a href="https://www.euractiv.fr/post-a-job/">Publier une offre d&#8217;emploi</a></li>
+	<li id="menu-item-270270" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270270"><a href="https://www.euractiv.fr/latest-jobs/">Dernières offres</a></li>
+	<li id="menu-item-270269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270269"><a href="https://www.euractiv.fr/post-your-event/">Publier un événement</a></li>
+	<li id="menu-item-270272" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270272"><a href="https://www.euractiv.fr/publier-un-communique/">Publier un communiqué</a></li>
+</ul>
+</div><div class="col-xs-12 col-sm-4 col-md-3 col-lg-2"><h4><b>Fondation EURACTIV</b></h4>
+<ul class="sub-menu">
+	<li id="menu-item-270296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270296"><a href="https://www.euractiv.fr/quest-ce-la-fondation-euractiv/">Qu&rsquo;est-ce la Fondation EURACTIV?</a></li>
+	<li id="menu-item-270310" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270310"><a href="https://www.euractiv.fr/yellow-academy-2016/">Formations</a></li>
+	<li id="menu-item-270315" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-270315"><a href="https://www.euractiv.fr/moderations/">Modérations</a>
+	<ul class="sub-menu">
+<span class="hidden"></span>	</ul>
+</li>
+	<li id="menu-item-270304" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270304"><a href="https://www.euractiv.fr/stages/">Stages</a></li>
+</ul>
+</div></nav>    </div></nav>
+        <hr class="hidden-xs col-sm-12">
+    <nav id="ea-network-flags" class="hidden-xs col-sm-12">
+        <div class="row">
+            <div id="network-flags-title" class="col-lg-1 hidden-md hidden-sm hidden-xs">
+                <h4>Réseau EURACTIV</h4>
+            </div>
+            <div id="network-flags-core" class="col-lg-3 col-md-3 col-sm-6"></div>
+            <div id="network-flags-network" class="col-lg-3 col-md-3 col-sm-6'"></div>
+            <div id="network-flags-associated" class="col-lg-5 col-md-6 col-sm-12"></div>
+        </div>
+    </nav>
+        <hr class="col-xs-12">
+    <div id="ea-copyright" class="col-xs-12">
+        <p>
+    Efficacité et Transparence des Acteurs Européens <i class="fa fa-copyright"></i> 1999-2018.
+    <a href="/about">EURACTIV.COM Ltd.</a>
+    |
+    <a href="/terms">Termes & conditions</a>
+    |
+    <a href="http://www.euractiv.fr/contacteznous/">Nous contacter</a>
+</p>    </div>
+
+     <!-- Search Modal for mobile -->
+<div class="modal fade searchmodal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Chercher</h4>
+      </div>
+      <div class="modal-body">
+        <form class="ea-form ea-searchform"
+            method="get" 
+            action="https://www.euractiv.fr"
+        >
+            <div class="row">   
+                <div class="col-md-6 col-md-offset-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="s"
+                    placeholder="Type Keyphrase"
+                >
+                </div>
+            </div>
+            <div class="row margin-top-10">
+                <div class="col-xs-12">
+                     <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+                     <button type="submit" class="btn btn-warning pull-right">  <i class="fa fa-lg fa-search"></i> Chercher</button>
+                </div>
+            </div>
+           </form>
+      </div>
+     
+   
+    </div>
+  </div>
+</div>
+
+<!-- End -->
+        </div></div>
+</footer>
+<div id="ea-print-footer" class="visible-print-block">
+	<p>
+    Efficacité et Transparence des Acteurs Européens <i class="fa fa-copyright"></i> 1999-2018.
+    <a href="/about">EURACTIV.COM Ltd.</a>
+    |
+    <a href="/terms">Termes & conditions</a>
+    |
+    <a href="http://www.euractiv.fr/contacteznous/">Nous contacter</a>
+</p></div>
+<script>window.EA=window.EA||{};window.EA.js_transport={"sponsorship":{"server_url":"\/\/sponsorship.euractiv.com\/api\/members\/"}}</script><script type="text/javascript">
+    var _ain = {
+        id: "1664",
+        maincontent: "h1, div.ea-image-meta, div.ea-article-body-content",
+        authors: "Paola Tamma",
+        postid: "368372",
+        url: "https://www.euractiv.fr/section/soci-t/news/italy-condemned-again-for-failing-to-recognise-same-sex-marriages/",
+        title: "L’Italie condamnée pour son retard sur le mariage gay",
+        pubdate: "2017-12-15T08:45:15Z",
+        comments: "1",
+        sections: "Politique,Société",
+        tags: "Cour européenne des droits de l’Homme,Italie,mariage gay,mariage homosexuel"
+    };
+        
+    (function (d, s) {
+    var sf = d.createElement(s); sf.type = 'text/javascript'; sf.async = true;
+    sf.src = (('https:' == d.location.protocol) ? 'https://d7d3cf2e81d293050033-3dfc0615b0fd7b49143049256703bfce.ssl.cf1.rackcdn.com' : 'http://t.contentinsights.com')+'/stf.js';
+    var t = d.getElementsByTagName(s)[0]; t.parentNode.insertBefore(sf, t);
+    })(document, 'script');
+</script>
+<script>(function (d) {
+d.css("\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.4.0\/css\/font-awesome.min.css");
+d.js("\/\/www.googletagservices.com\/tag\/js\/gpt.js");
+d.js("\/\/assets.euractiv.com\/eamap\/v3\/eamap-min.js");
+d.js("\/\/assets.euractiv.com\/social\/vsac-social-min.js");
+d.css("https:\/\/www.euractiv.fr\/wp-content\/ea-asset-cache\/aggr-bc3d92220ad82763734663fe7a146fe9.min.css");
+d.js("https:\/\/www.euractiv.fr\/wp-content\/ea-asset-cache\/aggr-36b29a79431b06869fca9963ebe98400.min.js");}(window.EA.defer));</script><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.euractiv.fr\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Merci de confirmer que vous n\u2019\u00eates pas un robot."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.euractiv.fr/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.3"></script>
+<script type="text/javascript" src="https://www.euractiv.fr/wp-content/plugins/bj-lazy-load/js/bj-lazy-load.min.js?ver=2"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var eafsso = {"login_url":"https:\/\/www.euractiv.fr\/wp-login.php","logged_in":"no"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.euractiv.fr/wp-content/mu-plugins/fsso/eafsso-min.js?ver=4.9.5"></script>
+<script type="text/javascript" src="https://www.euractiv.fr/wp-includes/js/wp-embed.min.js?ver=4.9.5"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7d19998ce3","applicationID":"123224118","transactionName":"YwFQYhFTVxZRAhJfCVpLZ0QKHVALVAQeGBZcFA==","queueTime":0,"applicationTime":1,"atts":"T0ZTFFlJRBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Page Caching using disk: enhanced 
+Mise en cache de base de données 22/152 requêtes dans 0.440 secondes utilisant disk
+Monitoring d'application utilisant New Relic 
+
+Served from: euractiv.fr @ 2018-11-28 15:19:33 by W3 Total Cache
+-->

@@ -1,0 +1,1 @@
+﻿MOTIF=\bgay marriage|homosexual marriage|same sex marriage|mariage homosexuel|mariage gay|同性婚姻\b
